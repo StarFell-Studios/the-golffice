@@ -1227,13 +1227,10 @@
   .nav-links { gap: 17px; }
   .nav-links a.nav-themes { display: inline-flex; align-items: center; gap: 7px; }
   .nav-theme-name {
-    font-size: 0.66rem;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    color: var(--color-base);
-    background: var(--color-primary);
-    padding: 3px 8px;
-    border-radius: 20px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    color: var(--color-primary);
     white-space: nowrap;
   }
 
@@ -1266,6 +1263,7 @@
     position: relative;
   }
   .theme-panel__label { color: var(--color-primary); font-size: 0.7rem; font-weight: 800; letter-spacing: 0.2em; text-transform: uppercase; }
+  .theme-panel__count { display: inline-block; background: var(--color-cta); color: var(--color-light); font-size: 0.62rem; font-weight: 800; letter-spacing: 0; padding: 1px 7px; border-radius: 20px; margin-left: 4px; vertical-align: middle; }
   .theme-panel__line { height: 2px; width: 34px; background: var(--color-cta); margin: 9px 0 10px; border-radius: 2px; }
   .theme-panel__note { color: rgba(255, 255, 255, 0.5); font-size: 0.74rem; line-height: 1.45; }
   .theme-panel__close {
@@ -1292,7 +1290,7 @@
     font-family: inherit;
   }
   .theme-card:hover { background: color-mix(in srgb, var(--color-base), white 13%); }
-  .theme-card.active { border-left-color: var(--color-primary); background: color-mix(in srgb, var(--color-base), white 15%); }
+  .theme-card.active { border-left-color: #76ABAE; background: color-mix(in srgb, var(--color-base), white 15%); }
   .theme-card__dots { display: flex; gap: 4px; flex: none; }
   .theme-card__dots span { width: 15px; height: 15px; border-radius: 50%; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.12); }
   .theme-card__meta { display: flex; flex-direction: column; gap: 1px; min-width: 0; }
@@ -1320,7 +1318,7 @@
       <a href="#corporate">Events</a>
       <a href="#faq" class="js-faq-open">FAQ</a>
       <a href="#proposal" class="nav-proposal js-deck-open">Brand Bible</a>
-      <a href="#themes" class="nav-themes js-themes-open">Themes<span class="nav-theme-name" id="navThemeName">Steel &amp; Teal</span></a>
+      <a href="#themes" class="nav-themes js-themes-open">Themes<span class="nav-theme-name" id="navThemeName">· Steel &amp; Teal</span></a>
     </nav>
 
     <div class="nav-right">
@@ -1350,7 +1348,7 @@
      ============================================================ -->
 <aside class="theme-panel" id="themePanel" aria-hidden="true" aria-label="Brand color themes">
   <div class="theme-panel__head">
-    <p class="theme-panel__label">Brand Color Themes</p>
+    <p class="theme-panel__label">Brand Color Themes <span class="theme-panel__count">30</span></p>
     <div class="theme-panel__line"></div>
     <p class="theme-panel__note">Click any theme to apply it to the site instantly.</p>
     <button class="theme-panel__close js-themes-close" type="button" aria-label="Close themes">
@@ -2651,26 +2649,36 @@
 
     /* ---- Theme Switcher ---- */
     var THEMES = [
-      { n: 1,  name: "Steel & Teal",     base: "#303841", primary: "#76ABAE", cta: "#FF5722", light: "#F5F5F5" },
-      { n: 2,  name: "Midnight Navy",    base: "#0F1F38", primary: "#4A90C4", cta: "#E8C84A", light: "#F5F3EE" },
-      { n: 3,  name: "Obsidian & Gold",  base: "#121212", primary: "#C9A84C", cta: "#C9A84C", light: "#F5F0E0" },
-      { n: 4,  name: "Slate & Ember",    base: "#263238", primary: "#90A4AE", cta: "#FF7043", light: "#F4F4F2" },
-      { n: 5,  name: "Bourbon & Cream",  base: "#2C1F14", primary: "#C8823A", cta: "#E8C84A", light: "#FAF3E4" },
-      { n: 6,  name: "Pebble Coast",     base: "#1C3A4A", primary: "#5BA4B8", cta: "#E8834A", light: "#F7F3EE" },
-      { n: 7,  name: "Carbon & Copper",  base: "#1A1A1A", primary: "#B87333", cta: "#FF6B35", light: "#F5F0EB" },
-      { n: 8,  name: "The Lounge",       base: "#2C3830", primary: "#7FAF8A", cta: "#E8A838", light: "#F8F5EE" },
-      { n: 9,  name: "St. Andrews Grey", base: "#2C3E50", primary: "#95A5B5", cta: "#E74C3C", light: "#F2F3F4" },
-      { n: 10, name: "Sandstone & Sky",  base: "#3D2B1F", primary: "#87CEEB", cta: "#E8834A", light: "#FAF3E0" },
-      { n: 11, name: "Titanium",         base: "#263238", primary: "#78909C", cta: "#26C6DA", light: "#ECEFF1" },
-      { n: 12, name: "Navy & Bone",      base: "#0F2040", primary: "#4A6FA5", cta: "#FF5722", light: "#FAF7F0" },
-      { n: 13, name: "Pacific Dusk",     base: "#1A2A3A", primary: "#5B7FA6", cta: "#F4845F", light: "#F8F4F0" },
-      { n: 14, name: "Crimson & Ivory",  base: "#1A0A0A", primary: "#8B0000", cta: "#D4AF37", light: "#F5EDE0" },
-      { n: 15, name: "Iron & Smoke",     base: "#1A1A1A", primary: "#6E6E6E", cta: "#E84855", light: "#F0F0F0" },
-      { n: 16, name: "Augusta Night",    base: "#0D1F1A", primary: "#1B4D3E", cta: "#FFD700", light: "#F8F4E8" },
-      { n: 17, name: "Scotch & Oak",     base: "#2A1F14", primary: "#8B6914", cta: "#C0392B", light: "#F5EAD8" },
-      { n: 18, name: "Graphite & Sage",  base: "#2A2D2E", primary: "#6B8E6E", cta: "#D4845F", light: "#F5F2EC" },
-      { n: 19, name: "Deep Indigo",      base: "#1A1A3E", primary: "#5C6BC0", cta: "#FF8A65", light: "#F3F4FA" },
-      { n: 20, name: "Smoked Walnut",    base: "#1C1410", primary: "#A0816A", cta: "#76ABAE", light: "#F5EDE4" }
+      { id: 1,  name: "Steel & Teal",      base: "#303841", primary: "#76ABAE", cta: "#FF5722", light: "#F5F5F5" },
+      { id: 2,  name: "Precision Red",     base: "#181B21", primary: "#C9CBCC", cta: "#E82127", light: "#F5F5F5" },
+      { id: 3,  name: "Championship Navy", base: "#00205B", primary: "#B9CBD3", cta: "#CCA600", light: "#F5F3EE" },
+      { id: 4,  name: "Crown Green",       base: "#0A1F15", primary: "#006039", cta: "#A37E2C", light: "#F8F4E8" },
+      { id: 5,  name: "Racing Green",      base: "#1A1A1A", primary: "#037A68", cta: "#F5F5F5", light: "#ECEFF0" },
+      { id: 6,  name: "Carbon & Chrome",   base: "#000000", primary: "#A6A6A6", cta: "#0071E3", light: "#F5F5F7" },
+      { id: 7,  name: "Cinematic Dark",    base: "#141414", primary: "#831010", cta: "#E50914", light: "#F5F5F5" },
+      { id: 8,  name: "Tour Blue",         base: "#001E50", primary: "#003C80", cta: "#F1373D", light: "#F5F7FA" },
+      { id: 9,  name: "Shield Gold",       base: "#1A1A1A", primary: "#C9A84C", cta: "#8D1F1F", light: "#F5F2EC" },
+      { id: 10, name: "Grand Touring",     base: "#0C1828", primary: "#1C3A5E", cta: "#B8A06A", light: "#F5F0E8" },
+      { id: 11, name: "Midnight Carbon",   base: "#0A0A0A", primary: "#939598", cta: "#680021", light: "#FFFAEC" },
+      { id: 12, name: "Tangelo",           base: "#1A1A1A", primary: "#F37022", cta: "#F37022", light: "#FFF8F0" },
+      { id: 13, name: "Monogram",          base: "#241A14", primary: "#92784E", cta: "#C9A050", light: "#FAF0E0" },
+      { id: 14, name: "The Bullring",      base: "#040404", primary: "#D8A016", cta: "#F9CE5C", light: "#FDF8EC" },
+      { id: 15, name: "Midnight Blue",     base: "#001830", primary: "#00498F", cta: "#BFC1C2", light: "#F5F7FA" },
+      { id: 16, name: "Pale Fire",         base: "#1C2A2A", primary: "#0ABAB5", cta: "#F37022", light: "#F5FAFA" },
+      { id: 17, name: "Vault",             base: "#0D0D0D", primary: "#D4C5A9", cta: "#C9A84C", light: "#FAF8F4" },
+      { id: 18, name: "Racing Heritage",   base: "#0A1A12", primary: "#037A68", cta: "#E8C84A", light: "#F5F2E8" },
+      { id: 19, name: "Trophy Room",       base: "#08142A", primary: "#1A3A6B", cta: "#CCA600", light: "#F5F3EC" },
+      { id: 20, name: "Birdie",            base: "#0A1E35", primary: "#B9CBD3", cta: "#0053FF", light: "#F4F7FA" },
+      { id: 21, name: "The Paddock",       base: "#1C1C1E", primary: "#BFC1C2", cta: "#CC0000", light: "#F5F5F5" },
+      { id: 22, name: "Champagne Room",    base: "#1A1208", primary: "#9F6B08", cta: "#F7DE9F", light: "#FDF9F0" },
+      { id: 23, name: "Shadow Box",        base: "#000000", primary: "#555555", cta: "#76ABAE", light: "#F5F5F7" },
+      { id: 24, name: "The Grove",         base: "#061A0F", primary: "#006039", cta: "#A37E2C", light: "#F5F2E4" },
+      { id: 25, name: "Cobalt & Cream",    base: "#001A40", primary: "#003C80", cta: "#F1373D", light: "#FAF8F4" },
+      { id: 26, name: "Bone & Slate",      base: "#2A2E30", primary: "#8A9BA8", cta: "#C9A84C", light: "#F5F0E8" },
+      { id: 27, name: "Etoupe",            base: "#1E1A18", primary: "#8A7968", cta: "#F37022", light: "#F5EDE4" },
+      { id: 28, name: "Club Car",          base: "#120808", primary: "#8D1F1F", cta: "#C9A84C", light: "#F5F0EC" },
+      { id: 29, name: "Glacier",           base: "#0A2428", primary: "#0ABAB5", cta: "#BFC1C2", light: "#F0FAFA" },
+      { id: 30, name: "Prestige",          base: "#0F1E2E", primary: "#736D5A", cta: "#C9A84C", light: "#F5F2EA" }
     ];
     var themePanel = document.getElementById("themePanel");
     if (themePanel) {
@@ -2681,15 +2689,17 @@
       var pad = function (n) { return (n < 10 ? "0" : "") + n; };
 
       var applyTheme = function (t) {
-        root.style.setProperty("--color-base", t.base);
-        root.style.setProperty("--color-primary", t.primary);
-        root.style.setProperty("--color-cta", t.cta);
-        root.style.setProperty("--color-light", t.light);
-        try { localStorage.setItem("golffice-theme", t.n); } catch (e) {}
+        // update all four CSS variables together in one atomic style recalc
+        var css = root.style;
+        css.setProperty("--color-base", t.base);
+        css.setProperty("--color-primary", t.primary);
+        css.setProperty("--color-cta", t.cta);
+        css.setProperty("--color-light", t.light);
+        try { localStorage.setItem("golffice-theme", t.id); } catch (e) {}
         themeList.querySelectorAll(".theme-card").forEach(function (c) {
-          c.classList.toggle("active", parseInt(c.getAttribute("data-num"), 10) === t.n);
+          c.classList.toggle("active", parseInt(c.getAttribute("data-id"), 10) === t.id);
         });
-        if (navThemeName) { navThemeName.textContent = t.name; }
+        if (navThemeName) { navThemeName.textContent = "· " + t.name; }
         swatches.forEach(function (sw) {
           var role = sw.getAttribute("data-role");
           var span = sw.querySelector(".swx-hex");
@@ -2701,7 +2711,7 @@
         var card = document.createElement("button");
         card.className = "theme-card";
         card.type = "button";
-        card.setAttribute("data-num", t.n);
+        card.setAttribute("data-id", t.id);
         card.innerHTML =
           '<div class="theme-card__dots">' +
             '<span style="background:' + t.base + '"></span>' +
@@ -2711,7 +2721,7 @@
           '</div>' +
           '<div class="theme-card__meta">' +
             '<span class="theme-card__name">' + t.name + '</span>' +
-            '<span class="theme-card__num">Theme ' + pad(t.n) + '</span>' +
+            '<span class="theme-card__num">Theme ' + pad(t.id) + '</span>' +
           '</div>';
         card.addEventListener("click", function () { applyTheme(t); });
         themeList.appendChild(card);
@@ -2740,7 +2750,7 @@
       var savedNum = null;
       try { savedNum = parseInt(localStorage.getItem("golffice-theme"), 10); } catch (e) {}
       var initial = null;
-      for (var i = 0; i < THEMES.length; i++) { if (THEMES[i].n === savedNum) { initial = THEMES[i]; break; } }
+      for (var i = 0; i < THEMES.length; i++) { if (THEMES[i].id === savedNum) { initial = THEMES[i]; break; } }
       applyTheme(initial || THEMES[0]);
     }
   })();
