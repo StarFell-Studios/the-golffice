@@ -1299,6 +1299,66 @@
   @media (max-width: 480px) {
     .theme-panel { width: calc(100vw - 40px); }
   }
+
+  /* Light / Dark mode toggle (pill at top of panel) */
+  .mode-toggle {
+    flex: none;
+    display: flex;
+    gap: 4px;
+    margin: 14px 14px 2px;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 30px;
+    padding: 4px;
+  }
+  .mode-btn {
+    flex: 1;
+    border: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.6);
+    font-family: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    padding: 8px 10px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+  }
+  .mode-btn:hover { color: #fff; }
+  .mode-btn.is-on { background: #F5F5F5; color: #303841; }
+  .mode-btn span { margin-right: 3px; }
+
+  /* ============================================================
+     LIGHT MODE — flip dark surfaces to light (scoped so hero,
+     footer, deck, and the panel stay dark automatically)
+     ============================================================ */
+  /* panel is a fixed neutral dark UI chrome in BOTH modes */
+  .theme-panel { --color-base: #303841; }
+
+  :root[data-mode="light"] .nav,
+  :root[data-mode="light"] .memberships,
+  :root[data-mode="light"] .swingdeal,
+  :root[data-mode="light"] .corporate,
+  :root[data-mode="light"] .fcard,
+  :root[data-mode="light"] .loc-card {
+    --color-base: #FFFFFF;
+    --color-light: #1A1A1A;
+    --charcoal: #FFFFFF;
+    --offwhite: #1A1A1A;
+    --charcoal-2: #F4F4F4;
+    transition: --color-base 0.2s ease, --color-light 0.2s ease;
+  }
+  :root[data-mode="light"] body { background: #FFFFFF; color: #333333; }
+  :root[data-mode="light"] .nav { border-bottom: 1px solid #E8E8E8; }
+  :root[data-mode="light"] .nav-links a { color: #1A1A1A; }
+  :root[data-mode="light"] .nav-links a:hover,
+  :root[data-mode="light"] .nav-links a.active { color: var(--color-primary); }
+  :root[data-mode="light"] .nav-links a.nav-themes { color: var(--color-primary); }
+  :root[data-mode="light"] .logo img { filter: brightness(0); }
+  :root[data-mode="light"] .fcard,
+  :root[data-mode="light"] .loc-card { border: 1px solid #E8E8E8; }
+  /* CTA buttons keep white text on their colored fill */
+  :root[data-mode="light"] .btn--primary { color: #FFFFFF; }
 </style>
 
 <!-- ============================================================
@@ -1354,6 +1414,10 @@
     <button class="theme-panel__close js-themes-close" type="button" aria-label="Close themes">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
     </button>
+  </div>
+  <div class="mode-toggle" role="group" aria-label="Light or dark mode">
+    <button class="mode-btn js-mode" type="button" data-mode="light"><span>&#9728;</span>Light</button>
+    <button class="mode-btn js-mode is-on" type="button" data-mode="dark"><span>&#9679;</span>Dark</button>
   </div>
   <div class="theme-list" id="themeList"></div>
 </aside>
@@ -2687,8 +2751,17 @@
       var navThemeName = document.getElementById("navThemeName");
       var swatches = document.querySelectorAll(".swx");
       var pad = function (n) { return (n < 10 ? "0" : "") + n; };
+      var modeBtns = document.querySelectorAll(".js-mode");
+      var mode = "dark";
+      var currentTheme = THEMES[0];
+      var updateNavLabel = function () {
+        if (navThemeName) {
+          navThemeName.textContent = "· " + currentTheme.name + " · " + (mode === "light" ? "Light" : "Dark");
+        }
+      };
 
       var applyTheme = function (t) {
+        currentTheme = t;
         // update all four CSS variables together in one atomic style recalc
         var css = root.style;
         css.setProperty("--color-base", t.base);
@@ -2699,7 +2772,7 @@
         themeList.querySelectorAll(".theme-card").forEach(function (c) {
           c.classList.toggle("active", parseInt(c.getAttribute("data-id"), 10) === t.id);
         });
-        if (navThemeName) { navThemeName.textContent = "· " + t.name; }
+        updateNavLabel();
         swatches.forEach(function (sw) {
           var role = sw.getAttribute("data-role");
           var span = sw.querySelector(".swx-hex");
@@ -2745,6 +2818,23 @@
       document.addEventListener("keydown", function (e) {
         if (e.key === "Escape" && themePanel.classList.contains("open")) { closeThemes(); }
       });
+
+      // light / dark mode (deck is exempt — always renders dark)
+      var setMode = function (m) {
+        mode = (m === "light") ? "light" : "dark";
+        root.setAttribute("data-mode", mode);
+        try { localStorage.setItem("golffice-mode", mode); } catch (e) {}
+        modeBtns.forEach(function (b) { b.classList.toggle("is-on", b.getAttribute("data-mode") === mode); });
+        updateNavLabel();
+      };
+      modeBtns.forEach(function (b) {
+        b.addEventListener("click", function () { setMode(b.getAttribute("data-mode")); });
+      });
+
+      // initial mode: saved preference or default (dark)
+      var savedMode = null;
+      try { savedMode = localStorage.getItem("golffice-mode"); } catch (e) {}
+      setMode(savedMode === "light" ? "light" : "dark");
 
       // initial theme: saved preference or default (01)
       var savedNum = null;
