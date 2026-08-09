@@ -781,73 +781,6 @@
   .loc-card .btn--outline { color: var(--teal); border-color: var(--teal); }
   .loc-card .btn--outline:hover { background: var(--teal); color: var(--charcoal); }
 
-  /* ============================================================
-     SECTION 8.5 — FAQ (ACCORDION)
-     ============================================================ */
-  .faq { background: var(--charcoal); }
-  .faq .head { text-align: center; max-width: 680px; margin: 0 auto 44px; }
-  .faq h2 { color: var(--offwhite); font-size: 2.4rem; font-weight: 800; margin-bottom: 14px; }
-  .faq .sub { color: color-mix(in srgb, var(--color-light) 72%, transparent); font-size: 1.05rem; }
-  .faq-list { max-width: 960px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
-  .faq-grid { display: flex; flex-direction: column; gap: 14px; }
-  .faq-col { display: flex; flex-direction: column; gap: 14px; }
-  .faq-item {
-    background: var(--charcoal-2);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    overflow: hidden;
-    transition: border-color 0.25s var(--ease), background 0.25s var(--ease);
-  }
-  .faq-item.open { border-color: color-mix(in srgb, var(--color-primary) 50%, transparent); }
-  .faq-item--start { border-color: color-mix(in srgb, var(--color-cta) 45%, transparent); }
-  .faq-item--start .faq-q { color: var(--offwhite); }
-  .faq-q {
-    width: 100%;
-    text-align: left;
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-family: inherit;
-    color: var(--offwhite);
-    font-size: 1.05rem;
-    font-weight: 700;
-    line-height: 1.35;
-    padding: 18px 22px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 18px;
-    transition: color 0.2s var(--ease);
-  }
-  .faq-q:hover { color: var(--teal); }
-  .faq-badge {
-    flex: none;
-    font-size: 0.6rem;
-    font-weight: 800;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--sienna);
-    background: color-mix(in srgb, var(--color-cta) 14%, transparent);
-    padding: 4px 10px;
-    border-radius: 30px;
-    margin-right: auto;
-    margin-left: 12px;
-  }
-  .faq-icon { flex: none; width: 22px; height: 22px; color: var(--teal); transition: transform 0.35s var(--ease); }
-  .faq-item.open .faq-icon { transform: rotate(180deg); }
-  .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.38s var(--ease); }
-  .faq-a-inner { padding: 0 24px 24px; color: color-mix(in srgb, var(--color-light) 74%, transparent); font-size: 0.98rem; line-height: 1.72; }
-  .faq-a-inner strong { color: var(--offwhite); font-weight: 700; }
-  .faq-a-inner a { color: var(--teal); font-weight: 600; }
-  .faq-cta { text-align: center; margin-top: 44px; }
-  .faq-cta .btn { margin-bottom: 16px; }
-  .faq-help { color: color-mix(in srgb, var(--color-light) 60%, transparent); font-size: 0.92rem; }
-  .faq-help a { color: var(--teal); font-weight: 600; }
-  @media (min-width: 900px) {
-    .faq h2 { font-size: 2.8rem; }
-    .faq-q { font-size: 1.08rem; }
-  }
-
   /* ---- FAQ MODAL ---- */
   .faq-modal {
     position: fixed;
@@ -914,9 +847,6 @@
   .faq-modal__close svg { width: 20px; height: 20px; }
   .faq-modal__body { padding: 24px 28px 28px; overflow-y: auto; }
   .faq-modal__body .sub { color: color-mix(in srgb, var(--color-light) 72%, transparent); font-size: 1rem; margin-bottom: 24px; }
-  .faq-modal .faq-list { max-width: none; }
-  .faq-modal .faq-grid { flex-direction: column; }
-  .faq-modal .faq-cta { margin-top: 30px; }
 
   /* ============================================================
      SECTION 9 — FINAL CTA
@@ -1008,7 +938,73 @@
     .reveal { opacity: 1; transform: none; }
   }
 
-
+  /* ============================================================
+     FAQ — video accordion
+     ============================================================ */
+  .qa { background: #303841; }
+  .qa-head { text-align: center; max-width: 680px; margin: 0 auto 44px; }
+  .qa-head h2 {
+    color: #F5F5F5;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .qa-sub { color: rgba(245, 245, 245, 0.7); font-size: 1.05rem; }
+  .qa-list { max-width: 820px; margin: 0 auto; display: flex; flex-direction: column; gap: 12px; }
+  .qa-item {
+    background: #3d444e;
+    border-radius: 12px;
+    border-left: 3px solid transparent;
+    overflow: hidden;
+    transition: border-color 0.25s var(--ease);
+  }
+  .qa-item.open { border-left-color: #76ABAE; }
+  .qa-q {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    font-family: inherit;
+    color: #F5F5F5;
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.4;
+    padding: 20px 22px;
+    transition: color 0.2s var(--ease);
+  }
+  .qa-q:hover { color: #76ABAE; }
+  .qa-icon { flex: none; width: 22px; height: 22px; position: relative; }
+  .qa-icon::before,
+  .qa-icon::after { content: ""; position: absolute; background: #76ABAE; border-radius: 2px; }
+  .qa-icon::before { top: 50%; left: 2px; right: 2px; height: 2px; transform: translateY(-50%); }
+  .qa-icon::after {
+    left: 50%; top: 2px; bottom: 2px; width: 2px;
+    transform: translateX(-50%);
+    transition: transform 0.25s var(--ease), opacity 0.2s ease;
+  }
+  .qa-item.open .qa-icon::after { transform: translateX(-50%) scaleY(0); opacity: 0; }
+  .qa-panel { max-height: 0; overflow: hidden; transition: max-height 0.35s var(--ease); }
+  .qa-panel-inner { padding: 0 22px 22px; }
+  .qa-text { color: rgba(245, 245, 245, 0.85); font-size: 0.92rem; line-height: 1.6; margin-bottom: 16px; }
+  .qa-video {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #000;
+  }
+  .qa-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+  @media (min-width: 900px) {
+    .qa-head h2 { font-size: 2.9rem; }
+  }
 </style>
 
 <!-- ============================================================
@@ -1026,7 +1022,7 @@
       <a href="#leagues">Leagues</a>
       <a href="#locations">Locations</a>
       <a href="#corporate">Events</a>
-      <a href="#faq" class="js-faq-open">FAQ</a>
+      <a href="#faq">FAQ</a>
     </nav>
 
     <div class="nav-right">
@@ -1045,7 +1041,7 @@
   <a href="#leagues">Leagues</a>
   <a href="#locations">Locations</a>
   <a href="#corporate">Events</a>
-  <a href="#faq" class="js-faq-open">FAQ</a>
+  <a href="#faq">FAQ</a>
   <a href="#book" class="btn btn--primary">Book Now</a>
 </div>
 
@@ -1393,194 +1389,140 @@
   </section>
 
   <!-- ============================================================
-       FAQ MODAL (opened from nav)
+       FAQ — video accordion
        ============================================================ -->
-  <div class="faq-modal" id="faqModal" aria-hidden="true">
-    <div class="faq-modal__backdrop" data-faq-close></div>
-    <div class="faq-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="faqModalTitle">
-      <div class="faq-modal__header">
-        <div class="faq-modal__titles">
-          <p class="eyebrow">Help &amp; Self-Serve Guide</p>
-          <h2 id="faqModalTitle">You&rsquo;re in the bay. Now what?</h2>
-        </div>
-        <button class="faq-modal__close" type="button" data-faq-close aria-label="Close FAQ">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l12 12M18 6L6 18" /></svg>
-        </button>
+  <section class="section qa" id="faq">
+    <div class="wrap">
+      <div class="qa-head reveal">
+        <p class="eyebrow eyebrow--center">FAQ</p>
+        <h2>Got Questions?</h2>
+        <p class="qa-sub">Quick answers below &mdash; and a video if you need it.</p>
       </div>
-      <div class="faq-modal__body">
-        <p class="sub">The Golffice is self-serve and open 24/7 &mdash; here&rsquo;s everything you need to power up, play, and close out on your own.</p>
+      <div class="qa-list reveal">
 
-      <div class="faq-list">
-
-        <div class="faq-item faq-item--start open">
-          <button class="faq-q" aria-expanded="true" aria-controls="faq-a0">
-            First time to The Golffice? Start here&hellip;
-            <span class="faq-badge">Start Here</span>
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a0"><div class="faq-a-inner">
-            Welcome! Every bay is <strong>self-serve and open 24/7</strong>. When you book, we text and email you a <strong>door code</strong> and your bay assignment. Walk in, find your bay, and the TrackMan simulator is ready to go. This guide walks you through the whole thing &mdash; getting in, powering up, picking a course, and closing out when you&rsquo;re done. Stuck at any point? Call or text <a href="tel:+12058102245">(205) 810-2245</a>, day or night.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b1" aria-expanded="false" aria-controls="qa-p1"><span>I&rsquo;m here but the door is locked. What do I do?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p1" role="region" aria-labelledby="qa-b1"><div class="qa-panel-inner">
+            <p class="qa-text">Check your booking confirmation email &mdash; it contains your unique door access code. Enter the code on the keypad next to the entrance door. If you have any trouble, call (205)&nbsp;810-2245.</p>
+            <div class="qa-video"><iframe title="How to get in" src="" data-src="https://www.youtube.com/embed/kv0WpEky-1M?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-grid">
-          <div class="faq-col">
-
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a1">
-            I&rsquo;m here, but the door is locked. What do I do?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a1"><div class="faq-a-inner">
-            The door unlocks with the <strong>access code from your booking confirmation</strong> (check your text or email). Punch it into the keypad at the main entrance, then head to your assigned bay. Codes go live a few minutes before your session and expire when it ends. No code? Text or call <a href="tel:+12058102245">(205) 810-2245</a> and we&rsquo;ll get you in.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b2" aria-expanded="false" aria-controls="qa-p2"><span>First time at The Golffice? Start here.</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p2" role="region" aria-labelledby="qa-b2"><div class="qa-panel-inner">
+            <p class="qa-text">Welcome. This video walks you through everything you need to know for your first visit &mdash; from walking in to teeing off. Takes about two minutes and covers all the basics.</p>
+            <div class="qa-video"><iframe title="First time at The Golffice" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a2">
-            The screen is black and the computer is off. What do I do?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a2"><div class="faq-a-inner">
-            Power it up. The <strong>PC tower is in the cabinet beside the hitting mat</strong> &mdash; press the power button once and give it about a minute to boot. The projector wakes automatically. If it doesn&rsquo;t, grab the small remote on the bay desk and press power once.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b3" aria-expanded="false" aria-controls="qa-p3"><span>The screen is black and the computer is off. What do I do?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p3" role="region" aria-labelledby="qa-b3"><div class="qa-panel-inner">
+            <p class="qa-text">Press the power button on the computer tower located in the bay. Give it about 60 seconds to boot up fully, then the simulator software will launch automatically.</p>
+            <div class="qa-video"><iframe title="Powering on the computer" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a3">
-            The simulator screen is black but the computer screen is on. Now what?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a3"><div class="faq-a-inner">
-            That&rsquo;s just the projector asleep. Point the <strong>projector remote</strong> (on the bay desk) at the screen and press power once &mdash; give it 20&ndash;30 seconds to warm up. If the desktop shows on the computer but not the big screen, press <strong>&ldquo;Source&rdquo;</strong> on the remote until the golf software appears.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b4" aria-expanded="false" aria-controls="qa-p4"><span>The simulator screen is black but the computer is on. Now what?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p4" role="region" aria-labelledby="qa-b4"><div class="qa-panel-inner">
+            <p class="qa-text">Check that the projector is powered on &mdash; there is a power button on the projector unit above the bay. If it is on but the screen is still black, try pressing the input source button until the simulator display appears.</p>
+            <div class="qa-video"><iframe title="Projector troubleshooting" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a4">
-            I see the driving range, but I don&rsquo;t know how to play a course. Help!
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a4"><div class="faq-a-inner">
-            You&rsquo;re in warm-up mode. On the <strong>TrackMan touchscreen</strong>, tap the menu (top-left), choose <strong>Play &rarr; On Course</strong>, then pick your course and tee and hit <strong>Start Round</strong>. You&rsquo;re on the first tee. The range is always there when you want to loosen up before you play.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b5" aria-expanded="false" aria-controls="qa-p5"><span>I see the driving range but I don&rsquo;t know how to play a course. Help!</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p5" role="region" aria-labelledby="qa-b5"><div class="qa-panel-inner">
+            <p class="qa-text">From the main menu, select Play Golf, then choose Course Play from the options. You can then browse and select any course in the library. The welcome video walks through this step by step.</p>
+            <div class="qa-video"><iframe title="Playing a course" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a5">
-            It looks like someone quit mid-round. How do I start over?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a5"><div class="faq-a-inner">
-            Easy fix. On the touchscreen, tap the menu and select <strong>End Round</strong> (confirm yes), then start fresh with <strong>Play &rarr; On Course</strong>. Whatever the last guest left behind won&rsquo;t affect your session once you begin a new round.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b6" aria-expanded="false" aria-controls="qa-p6"><span>It looks like someone left in the middle of a round. How do I start over?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p6" role="region" aria-labelledby="qa-b6"><div class="qa-panel-inner">
+            <p class="qa-text">Press the menu button on the simulator screen and select End Round, then Start New Session to begin fresh. This clears the previous player&rsquo;s data completely.</p>
+            <div class="qa-video"><iframe title="Starting a new session" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a6">
-            What do I need to know about setting up a round of golf?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a6"><div class="faq-a-inner">
-            On the setup screen you&rsquo;ll choose: <strong>players and names</strong>, <strong>tee boxes</strong> (forward tees are more fun for beginners), <strong>gimme distance</strong>, and <strong>handicap on/off</strong>. You can also toggle mulligans. Ten seconds here and the round runs smoothly for the whole group.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b7" aria-expanded="false" aria-controls="qa-p7"><span>What do I need to know about setting up a round of golf?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p7" role="region" aria-labelledby="qa-b7"><div class="qa-panel-inner">
+            <p class="qa-text">You can set number of players, handicaps, tee position, and game format before starting. If you just want to jump in and play, the default settings work for most groups &mdash; hit Start and go.</p>
+            <div class="qa-video"><iframe title="Setting up a round" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a7">
-            What courses can I play? How do I see if one&rsquo;s available?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a7"><div class="faq-a-inner">
-            Thousands &mdash; <strong>Augusta National, Pebble Beach, St. Andrews, Pinehurst No. 2</strong> and many more. On the touchscreen, tap <strong>Play &rarr; On Course</strong> and use the search bar or filters to find a specific course. If it&rsquo;s in the list, it&rsquo;s ready to play right now.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b8" aria-expanded="false" aria-controls="qa-p8"><span>What courses can I play? How do I find a specific course?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p8" role="region" aria-labelledby="qa-b8"><div class="qa-panel-inner">
+            <p class="qa-text">Thousands of courses are available including Augusta National, Pebble Beach, St. Andrews, Kapalua, and Pinehurst. Use the search bar in the course menu to find a specific course by name.</p>
+            <div class="qa-video"><iframe title="Finding a course" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-          </div>
-          <div class="faq-col">
-
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a8">
-            What golf formats are available?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a8"><div class="faq-a-inner">
-            <strong>Stroke Play, Match Play, Scramble, Best Ball,</strong> and <strong>Alternate Shot</strong> are all built in &mdash; pick your format on the round-setup screen. Solo? Stroke play is the classic. Big group? Scramble keeps everyone moving.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b9" aria-expanded="false" aria-controls="qa-p9"><span>What golf formats are available?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p9" role="region" aria-labelledby="qa-b9"><div class="qa-panel-inner">
+            <p class="qa-text">You can play stroke play, match play, scramble, skins, and more. Formats are selectable when you set up your round. The welcome video covers the most popular options.</p>
+            <div class="qa-video"><iframe title="Golf formats" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a9">
-            Can we play as partners?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a9"><div class="faq-a-inner">
-            Absolutely. Choose a team format like <strong>Scramble, Best Ball,</strong> or <strong>Alternate Shot</strong> during setup, then assign players to teams. Perfect for date night or 2-on-2 with friends.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b10" aria-expanded="false" aria-controls="qa-p10"><span>Can we play as partners or as a team?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p10" role="region" aria-labelledby="qa-b10"><div class="qa-panel-inner">
+            <p class="qa-text">Yes. When setting up your round, select the number of players and assign them to teams. Scramble and best ball formats are both available for team play.</p>
+            <div class="qa-video"><iframe title="Team play" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a10">
-            Why isn&rsquo;t this darn thing working?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a10"><div class="faq-a-inner">
-            Nine times out of ten it&rsquo;s <strong>ball placement</strong> &mdash; set the ball on the marked spot on the mat so the sensor can read it. Still stuck? Tap the menu &rarr; <strong>Restart Software</strong>, or fully reboot the PC (power button, wait a minute). If it&rsquo;s really being stubborn, call <a href="tel:+12058102245">(205) 810-2245</a> anytime.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b11" aria-expanded="false" aria-controls="qa-p11"><span>Why isn&rsquo;t this thing working?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p11" role="region" aria-labelledby="qa-b11"><div class="qa-panel-inner">
+            <p class="qa-text">First try closing and reopening the simulator software from the desktop. If that doesn&rsquo;t resolve it, restart the computer. For anything else call (205)&nbsp;810-2245 and someone will help you right away.</p>
+            <div class="qa-video"><iframe title="Troubleshooting" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a11">
-            What does all this stuff on the screen mean?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a11"><div class="faq-a-inner">
-            The HUD shows your <strong>shot data</strong>: carry and total distance, ball speed, launch angle, spin, and shot shape. Up top you&rsquo;ll see the hole layout, par, and distance to the pin; the mini-map shows where your ball landed. You don&rsquo;t need any of it to have fun &mdash; but it&rsquo;s there when you want to dial in your swing.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b12" aria-expanded="false" aria-controls="qa-p12"><span>What does all this stuff on the screen mean?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p12" role="region" aria-labelledby="qa-b12"><div class="qa-panel-inner">
+            <p class="qa-text">The data displayed includes ball speed, launch angle, spin rate, carry distance, and club path. You don&rsquo;t need to understand all of it to play &mdash; but the welcome video breaks down the most useful numbers if you want to dig in.</p>
+            <div class="qa-video"><iframe title="Reading the data" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a12">
-            How do I hit the ball where I want?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a12"><div class="faq-a-inner">
-            <strong>Aim first.</strong> Use the on-screen aim arrows (or drag on the touchscreen) to set your target line before you swing. Then just hit it there &mdash; the simulator reads your real club path and face, so line your body up toward where you want the ball to go.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b13" aria-expanded="false" aria-controls="qa-p13"><span>How do I aim and hit the ball where I want it to go?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p13" role="region" aria-labelledby="qa-b13"><div class="qa-panel-inner">
+            <p class="qa-text">Aim using the alignment marker on the mat and address the ball normally. The simulator reads your actual swing &mdash; the more naturally you swing, the more accurate the shot data will be. No special technique required.</p>
+            <div class="qa-video"><iframe title="Aiming and hitting" src="" data-src="https://www.youtube.com/embed/oiFRJSPKRNQ?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a13">
-            Man, I stink! How do I hit my last shot over?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a13"><div class="faq-a-inner">
-            We&rsquo;ve all been there. If mulligans are enabled, tap <strong>&ldquo;Mulligan&rdquo;</strong> (or &ldquo;Retry Shot&rdquo;) on the touchscreen to wipe that swing and hit again. You can turn mulligans on anytime in the round settings. What happens in the bay stays in the bay.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b14" aria-expanded="false" aria-controls="qa-p14"><span>I hit a bad shot. Can I replay it?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p14" role="region" aria-labelledby="qa-b14"><div class="qa-panel-inner">
+            <p class="qa-text">Yes. Press the replay button on screen &mdash; it is labeled Mulligan or Replay depending on your software version. There may be a limit on replays per round depending on your game format settings.</p>
+            <div class="qa-video"><iframe title="Replaying a shot" src="" data-src="https://www.youtube.com/embed/1ciHolCgVa4?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-        <div class="faq-item">
-          <button class="faq-q" aria-expanded="false" aria-controls="faq-a14">
-            My time is almost up. What do I do before I leave?
-            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6" /></svg>
-          </button>
-          <div class="faq-a" id="faq-a14"><div class="faq-a-inner">
-            Wrap up in three steps: <strong>(1)</strong> tap the menu &rarr; <strong>End Round</strong> so the bay&rsquo;s clear for the next guest, <strong>(2)</strong> grab your clubs, drinks, and belongings, and <strong>(3)</strong> leave the computer and projector <strong>on</strong> &mdash; they reset on their own. The door locks behind you. That&rsquo;s it &mdash; come back any time, day or night.
+        <div class="qa-item">
+          <button class="qa-q" id="qa-b15" aria-expanded="false" aria-controls="qa-p15"><span>My time is almost up. What do I need to do before I leave?</span><span class="qa-icon" aria-hidden="true"></span></button>
+          <div class="qa-panel" id="qa-p15" role="region" aria-labelledby="qa-b15"><div class="qa-panel-inner">
+            <p class="qa-text">Save your round if you want to keep your score, then return all equipment to where you found it. Make sure the simulator is back on the main menu screen for the next guest. No check-out process required &mdash; just head out when you&rsquo;re done.</p>
+            <div class="qa-video"><iframe title="Before you leave" src="" data-src="https://www.youtube.com/embed/sNwkidaCd4o?rel=0&amp;modestbranding=1&amp;controls=1" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
           </div></div>
         </div>
 
-          </div>
-        </div>
-
-      </div>
-
-      <div class="faq-cta">
-        <a href="#book" class="btn btn--primary" data-faq-close>Book a Bay</a>
-        <p class="faq-help">Still stuck in the bay? Call or text <a href="tel:+12058102245">(205) 810-2245</a> &mdash; we&rsquo;re here 24/7.</p>
-      </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ============================================================
        SECTION 9 — FINAL CTA
@@ -1700,72 +1642,33 @@
       });
     }
 
-    /* ---- FAQ accordion ---- */
-    var faqItems = document.querySelectorAll(".faq-item");
-    function setPanel(item, open) {
-      var panel = item.querySelector(".faq-a");
-      var btn = item.querySelector(".faq-q");
-      item.classList.toggle("open", open);
-      btn.setAttribute("aria-expanded", open ? "true" : "false");
-      panel.style.maxHeight = open ? panel.scrollHeight + "px" : "0px";
-    }
-    faqItems.forEach(function (item) {
-      var btn = item.querySelector(".faq-q");
-      btn.addEventListener("click", function () {
-        setPanel(item, !item.classList.contains("open"));
+    /* ---- FAQ video accordion (one open at a time, lazy-load videos) ---- */
+    var qaItems = document.querySelectorAll(".qa-item");
+    var qaClose = function (item) {
+      item.classList.remove("open");
+      item.querySelector(".qa-q").setAttribute("aria-expanded", "false");
+      item.querySelector(".qa-panel").style.maxHeight = "0px";
+      var f = item.querySelector("iframe");
+      if (f) { f.src = ""; } // stop playback + unload
+    };
+    var qaOpen = function (item) {
+      qaItems.forEach(function (o) { if (o !== item) { qaClose(o); } });
+      item.classList.add("open");
+      item.querySelector(".qa-q").setAttribute("aria-expanded", "true");
+      var f = item.querySelector("iframe");
+      if (f && f.getAttribute("data-src")) { f.src = f.getAttribute("data-src"); } // set src on click
+      var panel = item.querySelector(".qa-panel");
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    };
+    qaItems.forEach(function (item) {
+      item.querySelector(".qa-q").addEventListener("click", function () {
+        if (item.classList.contains("open")) { qaClose(item); } else { qaOpen(item); }
       });
     });
-    // set height for any items open by default (after fonts settle)
-    function initOpenFaqs() {
-      document.querySelectorAll(".faq-item.open").forEach(function (item) {
-        item.querySelector(".faq-a").style.maxHeight =
-          item.querySelector(".faq-a").scrollHeight + "px";
-      });
-    }
-    initOpenFaqs();
-    if (document.fonts && document.fonts.ready) { document.fonts.ready.then(initOpenFaqs); }
-    // keep open panels sized correctly on resize
-    var faqResizeTimer;
     window.addEventListener("resize", function () {
-      clearTimeout(faqResizeTimer);
-      faqResizeTimer = setTimeout(function () {
-        document.querySelectorAll(".faq-item.open").forEach(function (item) {
-          var p = item.querySelector(".faq-a");
-          p.style.maxHeight = "none";
-          var h = p.scrollHeight;
-          p.style.maxHeight = h + "px";
-        });
-      }, 120);
+      var open = document.querySelector(".qa-item.open .qa-panel");
+      if (open) { open.style.maxHeight = "none"; var h = open.scrollHeight; open.style.maxHeight = h + "px"; }
     }, { passive: true });
-
-    /* ---- FAQ modal (opened from nav) ---- */
-    var faqModal = document.getElementById("faqModal");
-    if (faqModal) {
-      var openFaqModal = function () {
-        if (body.classList.contains("menu-open")) { toggleMenu(false); }
-        faqModal.classList.add("open");
-        faqModal.setAttribute("aria-hidden", "false");
-        document.documentElement.style.overflow = "hidden";
-        // recompute heights for any open panels (layout may have been stale while hidden)
-        faqModal.querySelectorAll(".faq-item.open .faq-a").forEach(function (p) {
-          p.style.maxHeight = p.scrollHeight + "px";
-        });
-      };
-      var closeFaqModal = function () {
-        faqModal.classList.remove("open");
-        faqModal.setAttribute("aria-hidden", "true");
-        document.documentElement.style.overflow = "";
-      };
-      document.querySelectorAll(".js-faq-open").forEach(function (a) {
-        a.addEventListener("click", function (e) { e.preventDefault(); openFaqModal(); });
-      });
-      faqModal.querySelectorAll("[data-faq-close]").forEach(function (el) {
-        el.addEventListener("click", function () { closeFaqModal(); });
-      });
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && faqModal.classList.contains("open")) { closeFaqModal(); }
-      });
-    }
 
     /* ---- Pricing modal (opened from Memberships location picker) ---- */
     var plansModal = document.getElementById("plansModal");
