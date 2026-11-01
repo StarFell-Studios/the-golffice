@@ -1,0 +1,100 @@
+{
+  "client": "The Golffice",
+  "batch": "2026-11-v1",
+  "title": "November ads, round one",
+  "intro": "Here are the first ads for The Golffice, built from real photos of your locations. Watch each one, then tap Approve, Maybe or No. Add a note if something should change. Your picks save automatically.",
+  "reviewers": {
+    "michael": "Michael",
+    "kerry": "Kerry",
+    "mike": "Mike"
+  },
+  "items": [
+    {
+      "id": "reel-office-hours",
+      "type": "video",
+      "label": "Reel",
+      "title": "Office hours",
+      "src": "media/golffice-reel-office-hours-15s-1080x1920.mp4",
+      "poster": "media/office-poster.jpg",
+      "thumb": "media/office-poster-thumb.jpg",
+      "specs": "15 seconds, vertical for Reels and Stories",
+      "fields": [
+        ["Voiceover", "Tell your boss you're working late at the office. It's not a lie if it's The Golffice. Grab a private bay for up to eight and bring the whole team. The Golffice is now booking office hours."],
+        ["Headline", "Technically, you're at the office."],
+        ["Post text", "Tell the boss you're working late, because technically you will be at the office. Grab a private bay at The Golffice for up to 8 people and bring the whole team. Book in Birmingham, Huntsville or Madison at thegolffice.com."]
+      ]
+    },
+    {
+      "id": "reel-nature-doc",
+      "type": "video",
+      "label": "Reel",
+      "title": "Nature documentary",
+      "src": "media/golffice-reel-nature-doc-15s-1080x1920.mp4",
+      "poster": "media/nature-poster.jpg",
+      "thumb": "media/nature-poster-thumb.jpg",
+      "specs": "15 seconds, vertical for Reels and Stories",
+      "fields": [
+        ["Voiceover", "Here we observe the male golfer in his natural habitat. He has gathered his herd for the big game. Now the ritual begins. The herd will mock his slice for three straight hours. Book your bay at The Golffice."],
+        ["Headline", "Observe the golfer in his natural habitat."],
+        ["Post text", "Nature is beautiful when you see it up close. Watch the male golfer gather his herd for the big game, and then watch the herd roast his slice for three straight hours. Book your private bay in Birmingham, Huntsville or Madison at thegolffice.com."]
+      ]
+    },
+    {
+      "id": "reel-gameday",
+      "type": "video",
+      "label": "Reel",
+      "title": "Game day",
+      "src": "media/golffice-reel-gameday-15s-1080x1920.mp4",
+      "poster": "media/reel-poster.jpg",
+      "thumb": "media/reel-poster-thumb.jpg",
+      "specs": "15 seconds, vertical for Reels and Stories",
+      "fields": [
+        ["Voiceover", "The big game is on Saturday, so bring the crew. Get a private bay for up to eight for ninety nine bucks. Bring your cooler and play golf at halftime. At The Golffice, it's always tee time, rain or shine."],
+        ["Headline", "Book a game day bay for $99."],
+        ["Post text", "The big game is on Saturday, so bring the crew to The Golffice. A private bay holds up to 8 people for 3 hours, and it's $99 a bay plus tax and fees. Bring your own cooler and play a round at halftime. Book in Birmingham, Huntsville or Madison at thegolffice.com."]
+      ]
+    },
+    {
+      "id": "ad-gameday",
+      "type": "image",
+      "label": "Image ad",
+      "title": "Game day bay",
+      "src": "media/golffice-ad1-gameday-1080x1350.jpg",
+      "alt_src": "media/golffice-ad1-gameday-1080x1080.jpg",
+      "thumb": "media/golffice-ad1-gameday-thumb.jpg",
+      "specs": "Feed post, tall and square versions",
+      "fields": [
+        ["Headline", "Your crew gets its own bay for $99."],
+        ["Post text", "The big game is on this Saturday, and your crew needs a home base. Grab a private bay at The Golffice for up to 8 people for 3 hours. It's $99 a bay per game plus tax and fees, and you bring your own cooler. Book a bay in Birmingham, Huntsville or Madison at thegolffice.com."]
+      ]
+    },
+    {
+      "id": "ad-holiday",
+      "type": "image",
+      "label": "Image ad",
+      "title": "Holiday parties",
+      "src": "media/golffice-ad2-holiday-1080x1350.jpg",
+      "alt_src": "media/golffice-ad2-holiday-1080x1080.jpg",
+      "thumb": "media/golffice-ad2-holiday-thumb.jpg",
+      "specs": "Feed post, tall and square versions",
+      "fields": [
+        ["Headline", "Ask us about holiday party dates."],
+        ["Post text", "Are you planning the office holiday party this year? The Golffice has private bays and lounge space with room for your whole team, and you can bring in your own food or have it catered. Send us a note at thegolffice.com and ask which December dates are open."]
+      ]
+    },
+    {
+      "id": "ad-weekday",
+      "type": "image",
+      "label": "Image ad",
+      "title": "Weekday mornings",
+      "src": "media/golffice-ad3-weekday-1080x1350.jpg",
+      "alt_src": "media/golffice-ad3-weekday-1080x1080.jpg",
+      "thumb": "media/golffice-ad3-weekday-thumb.jpg",
+      "specs": "Feed post, tall and square versions",
+      "fields": [
+        ["Headline", "Weekday plans start at $99 a month."],
+        ["Post text", "Your weekday tee time is waiting at The Golffice. Weekday plans start at $99 a month, and booking a quiet morning bay is simple. The bay is set up and ready when you walk in, and we're open 24/7 when the weather won't cooperate. See the plans at thegolffice.com."]
+      ]
+    }
+  ]
+}

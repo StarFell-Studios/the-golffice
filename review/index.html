@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Golffice Content Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#1b1f22; --panel:#242a2e; --panel2:#2c3337; --line:#39424a; --fg:#f3ede0; --muted:#a9b2b1;
+  --teal:#3f8a90; --sienna:#d06a33; --cream:#f3ebd8;
+  --ok:#4caf6e; --maybe:#e0b33c; --no:#d9534f;
+  --display:"Barlow Condensed","Arial Narrow",Arial,sans-serif;
+  --body:"Barlow","Helvetica Neue",Arial,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html,body{margin:0}
+body{background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
+header{padding:28px 0 18px;display:flex;flex-direction:column;gap:14px}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{height:48px;width:auto}
+.kicker{font:700 12px/1 var(--display);letter-spacing:.16em;text-transform:uppercase;color:var(--teal)}
+h1{font:800 clamp(30px,7vw,44px)/1 var(--display);margin:0;text-wrap:balance}
+h1 span{color:var(--sienna)}
+.intro{color:var(--muted);margin:0;max-width:62ch}
+.who{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:14px;color:var(--muted)}
+.who b{color:var(--fg)}
+.who button{background:none;border:0;color:var(--teal);font:inherit;text-decoration:underline;cursor:pointer;padding:0}
+
+.progress{position:sticky;top:0;z-index:5;background:var(--bg);padding:12px 0;border-bottom:1px solid var(--line);margin-bottom:16px}
+.ptext{display:flex;justify-content:space-between;font:600 14px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px}
+.ptext .counts{color:var(--muted);font-variant-numeric:tabular-nums}
+.bar{height:6px;background:var(--panel2);border-radius:3px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--teal),var(--sienna));transition:width .4s}
+
+.list{display:flex;flex-direction:column;gap:10px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.card.approve{border-left:4px solid var(--ok)} .card.maybe{border-left:4px solid var(--maybe)} .card.no{border-left:4px solid var(--no)}
+.head{display:flex;gap:14px;align-items:center;padding:12px;cursor:pointer;width:100%;background:none;border:0;color:inherit;text-align:left;font:inherit}
+.head img{width:54px;height:68px;object-fit:cover;border-radius:6px;flex:none;background:#000}
+.ht{flex:1;min-width:0}
+.lbl{font:700 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--teal)}
+.ttl{font:800 22px/1.1 var(--display);margin-top:4px}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:6px}
+.chip{font:600 11px/1 var(--body);padding:4px 8px;border-radius:20px;background:var(--panel2);color:var(--muted)}
+.chip.approve{background:rgba(76,175,110,.18);color:#8fdba8}.chip.maybe{background:rgba(224,179,60,.18);color:#f0cf74}.chip.no{background:rgba(217,83,79,.2);color:#f19a97}
+.chev{color:var(--muted);transition:transform .25s;flex:none}
+.card.open .chev{transform:rotate(180deg)}
+.body{display:none;padding:0 14px 16px;flex-direction:column;gap:14px}
+.card.open .body{display:flex}
+.media{display:flex;justify-content:center;background:#000;border-radius:8px;overflow:hidden}
+.media video{width:100%;max-width:360px;max-height:70vh;display:block;background:#000}
+.media img{width:100%;max-width:480px;display:block}
+.toggle{display:flex;gap:6px;justify-content:center}
+.toggle button{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:20px;padding:6px 12px;font:600 13px var(--body);cursor:pointer}
+.toggle button.on{color:var(--fg);border-color:var(--teal)}
+.specs{font-size:13px;color:var(--muted);text-align:center;margin-top:-6px}
+.field{background:var(--panel2);border-radius:8px;padding:12px 14px}
+.field b{display:block;font:700 11px/1 var(--display);letter-spacing:.14em;text-transform:uppercase;color:var(--sienna);margin-bottom:6px}
+.field p{margin:0}
+.vote{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.vote button{border:2px solid var(--line);background:var(--panel2);color:var(--fg);border-radius:10px;padding:14px 6px;font:800 18px/1 var(--display);letter-spacing:.06em;text-transform:uppercase;cursor:pointer;transition:transform .08s,background .15s,border-color .15s}
+.vote button:active{transform:scale(.97)}
+.vote .approve.on{background:var(--ok);border-color:var(--ok);color:#0e2416}
+.vote .maybe.on{background:var(--maybe);border-color:var(--maybe);color:#2b2205}
+.vote .no.on{background:var(--no);border-color:var(--no);color:#2a0a09}
+textarea{width:100%;min-height:76px;resize:vertical;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:8px;padding:10px 12px;font:15px/1.4 var(--body)}
+textarea:focus{outline:2px solid var(--teal);border-color:transparent}
+.row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.status{font-size:13px;color:var(--muted)}
+.status.err{color:#f19a97}
+.next{background:var(--sienna);color:#fff;border:0;border-radius:8px;padding:10px 16px;font:700 15px var(--display);letter-spacing:.08em;text-transform:uppercase;cursor:pointer}
+.others{font-size:14px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px}
+.others div+div{margin-top:4px}
+
+.overlay{position:fixed;inset:0;background:rgba(10,12,14,.86);display:flex;align-items:center;justify-content:center;padding:16px;z-index:20}
+.overlay[hidden]{display:none}
+.modal{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px 22px;max-width:380px;width:100%;text-align:center}
+.modal h2{font:800 30px/1.05 var(--display);margin:0 0 8px}
+.modal p{color:var(--muted);margin:0 0 18px}
+.names{display:flex;flex-direction:column;gap:10px}
+.names button{background:var(--panel2);border:2px solid var(--line);color:var(--fg);border-radius:10px;padding:14px;font:800 22px var(--display);letter-spacing:.04em;cursor:pointer}
+.names button:hover{border-color:var(--teal)}
+.done{background:linear-gradient(135deg,rgba(63,138,144,.25),rgba(208,106,51,.2));border:1px solid var(--line);border-radius:10px;padding:18px;text-align:center;margin-top:16px}
+.done h2{font:800 28px/1 var(--display);margin:0 0 6px}
+.done p{margin:0;color:var(--muted)}
+footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
+.tagline{font:800 18px var(--display);letter-spacing:.04em}
+.tagline .a{color:var(--sienna)} .tagline .b{color:var(--cream)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="brand"><img src="media/logo.png" alt="The Golffice"></div>
+    <div class="kicker" id="batchLabel">Content review</div>
+    <h1 id="title">Content review</h1>
+    <p class="intro" id="intro"></p>
+    <div class="who" id="who" hidden>Reviewing as <b id="whoName"></b> <button id="switchWho" type="button">Not you?</button></div>
+  </header>
+
+  <div class="progress">
+    <div class="ptext"><span id="ptext">Loading</span><span class="counts" id="counts"></span></div>
+    <div class="bar"><i id="bar"></i></div>
+  </div>
+
+  <div class="list" id="list"></div>
+  <div class="done" id="done" hidden><h2>That's everything. Thank you.</h2><p>Your picks are saved. You can come back and change any of them until we schedule the posts.</p></div>
+
+  <footer><div class="tagline"><span class="a">Rain or Shine.</span> <span class="b">Always Tee Time.</span></div>Private review link. Please don't share it.</footer>
+</div>
+
+<div class="overlay" id="picker" hidden>
+  <div class="modal">
+    <h2>Who's reviewing?</h2>
+    <p>Pick your name so your votes are saved as yours.</p>
+    <div class="names" id="names"></div>
+  </div>
+</div>
+
+<script src="config.js"></script>
+<script>
+(function(){
+  const CFG = window.REVIEW_CONFIG || {};
+  const LABEL = {approve:'Approved', maybe:'Maybe', no:'No'};
+  let C = null, me = null, votes = {}, others = {};
+  const $ = id => document.getElementById(id);
+  const store = {
+    get(k){ try { return JSON.parse(localStorage.getItem(k)); } catch(e){ return null; } },
+    set(k,v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+  };
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+  function api(params){
+    if (!CFG.apiUrl) return Promise.reject(new Error('offline'));
+    const q = new URLSearchParams(Object.assign({key: CFG.key || ''}, params));
+    return fetch(CFG.apiUrl + '?' + q.toString(), {redirect:'follow'}).then(r => r.json());
+  }
+
+  fetch('content.json', {cache:'no-store'}).then(r => r.json()).then(init).catch(() => {
+    $('ptext').textContent = 'Could not load the content. Please refresh.';
+  });
+
+  function init(content){
+    C = content;
+    document.title = C.client + ' Content Review';
+    $('batchLabel').textContent = C.client + ' · Content review';
+    $('title').innerHTML = esc(C.title).replace(/,\s*(.*)$/, ', <span>$1</span>');
+    $('intro').textContent = C.intro;
+    const qp = new URLSearchParams(location.search);
+    const fromUrl = (qp.get('r') || qp.get('reviewer') || '').toLowerCase();
+    me = (fromUrl && C.reviewers[fromUrl]) ? fromUrl : (store.get('reviewer') || null);
+    if (me && !C.reviewers[me]) me = null;
+    $('names').innerHTML = Object.keys(C.reviewers).map(k => `<button type="button" data-k="${esc(k)}">${esc(C.reviewers[k])}</button>`).join('');
+    $('names').addEventListener('click', e => { const b = e.target.closest('button'); if (b) setMe(b.dataset.k); });
+    $('switchWho').addEventListener('click', () => { $('picker').hidden = false; });
+    if (me) setMe(me); else $('picker').hidden = false;
+  }
+
+  function setMe(k){
+    me = k; store.set('reviewer', k);
+    $('picker').hidden = true; $('who').hidden = false; $('whoName').textContent = C.reviewers[k];
+    votes = store.get('votes:' + C.batch + ':' + me) || {};
+    others = {};
+    render();
+    api({action:'list', batch:C.batch}).then(res => {
+      if (!res || !res.ok) return;
+      res.votes.forEach(v => {
+        if (v.reviewer === me) votes[v.item] = {vote:v.vote, note:v.note || ''};
+        else (others[v.item] = others[v.item] || []).push(v);
+      });
+      store.set('votes:' + C.batch + ':' + me, votes);
+      render();
+    }).catch(() => {});
+  }
+
+  function render(){
+    const openEl = document.querySelector('.card.open');
+    const openId = openEl ? openEl.dataset.id : null;
+    $('list').innerHTML = C.items.map(card).join('');
+    C.items.forEach(it => wire(it));
+    const target = openId || (C.items.find(it => !(votes[it.id] && votes[it.id].vote)) || {}).id;
+    if (target && !openId) open(target, false); else if (openId) open(openId, false);
+    progress();
+  }
+
+  function card(it){
+    const v = votes[it.id] || {};
+    const cls = v.vote ? ' ' + v.vote : '';
+    const chips = [`<span class="chip${v.vote ? ' ' + v.vote : ''}">${v.vote ? 'You: ' + LABEL[v.vote] : 'Not reviewed'}</span>`]
+      .concat((others[it.id] || []).filter(o => o.vote).map(o => `<span class="chip ${esc(o.vote)}">${esc(C.reviewers[o.reviewer] || o.reviewer)}: ${LABEL[o.vote] || ''}</span>`)).join('');
+    const media = it.type === 'video'
+      ? `<div class="media"><video src="${esc(it.src)}" poster="${esc(it.poster || '')}" controls playsinline preload="none"></video></div>`
+      : `<div class="media"><img src="${esc(it.src)}" alt="${esc(it.title)}" data-a="${esc(it.src)}" data-b="${esc(it.alt_src || '')}"></div>` +
+        (it.alt_src ? `<div class="toggle"><button type="button" class="on" data-v="a">Tall (feed)</button><button type="button" data-v="b">Square</button></div>` : '');
+    const fields = (it.fields || []).map(f => `<div class="field"><b>${esc(f[0])}</b><p>${esc(f[1])}</p></div>`).join('');
+    const oth = (others[it.id] || []).filter(o => o.vote || o.note).map(o =>
+      `<div><b>${esc(C.reviewers[o.reviewer] || o.reviewer)}</b>: ${esc(LABEL[o.vote] || 'No vote')}${o.note ? ' · "' + esc(o.note) + '"' : ''}</div>`).join('');
+    return `<article class="card${cls}" data-id="${esc(it.id)}">
+      <button class="head" type="button" aria-expanded="false">
+        <img src="${esc(it.thumb || it.poster || it.src)}" alt="" loading="lazy">
+        <div class="ht"><div class="lbl">${esc(it.label)}</div><div class="ttl">${esc(it.title)}</div><div class="chips">${chips}</div></div>
+        <svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+      </button>
+      <div class="body">
+        ${media}
+        ${it.specs ? `<div class="specs">${esc(it.specs)}</div>` : ''}
+        ${fields}
+        <div class="vote">
+          <button type="button" class="approve${v.vote==='approve'?' on':''}" data-vote="approve">Approve</button>
+          <button type="button" class="maybe${v.vote==='maybe'?' on':''}" data-vote="maybe">Maybe</button>
+          <button type="button" class="no${v.vote==='no'?' on':''}" data-vote="no">No</button>
+        </div>
+        <textarea placeholder="Notes or changes (optional)" maxlength="1500">${esc(v.note || '')}</textarea>
+        <div class="row"><span class="status"></span><button type="button" class="next">Next</button></div>
+        ${oth ? `<div class="others">${oth}</div>` : ''}
+      </div>
+    </article>`;
+  }
+
+  function wire(it){
+    const el = document.querySelector(`.card[data-id="${CSS.escape(it.id)}"]`);
+    el.querySelector('.head').addEventListener('click', () => open(it.id, true, true));
+    el.querySelectorAll('.vote button').forEach(b => b.addEventListener('click', () => {
+      const cur = (votes[it.id] || {}).vote;
+      save(it, b.dataset.vote === cur ? '' : b.dataset.vote, el.querySelector('textarea').value, el);
+    }));
+    const ta = el.querySelector('textarea');
+    let t; ta.addEventListener('input', () => { clearTimeout(t); t = setTimeout(() => save(it, (votes[it.id] || {}).vote || '', ta.value, el, true), 1200); });
+    ta.addEventListener('blur', () => { clearTimeout(t); if ((votes[it.id] || {}).note !== ta.value) save(it, (votes[it.id] || {}).vote || '', ta.value, el, true); });
+    el.querySelector('.next').addEventListener('click', () => {
+      const i = C.items.findIndex(x => x.id === it.id);
+      const nxt = C.items.slice(i + 1).concat(C.items.slice(0, i)).find(x => !(votes[x.id] && votes[x.id].vote)) || C.items[(i + 1) % C.items.length];
+      open(nxt.id, true, true);
+    });
+    const tg = el.querySelector('.toggle');
+    if (tg) tg.addEventListener('click', e => {
+      const b = e.target.closest('button'); if (!b) return;
+      tg.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
+      const img = el.querySelector('.media img'); img.src = img.dataset[b.dataset.v];
+    });
+  }
+
+  function open(id, scroll, toggle){
+    document.querySelectorAll('.card').forEach(c => {
+      const isT = c.dataset.id === id;
+      const willOpen = isT && !(toggle && c.classList.contains('open'));
+      if (!willOpen) c.querySelectorAll('video').forEach(v => v.pause());
+      c.classList.toggle('open', willOpen);
+      c.querySelector('.head').setAttribute('aria-expanded', willOpen);
+    });
+    if (scroll) { const c = document.querySelector(`.card[data-id="${CSS.escape(id)}"]`); setTimeout(() => c && c.scrollIntoView({behavior:'smooth', block:'start'}), 60); }
+  }
+
+  function save(it, vote, note, el, quiet){
+    votes[it.id] = {vote, note};
+    store.set('votes:' + C.batch + ':' + me, votes);
+    el.className = 'card open' + (vote ? ' ' + vote : '');
+    el.querySelectorAll('.vote button').forEach(b => b.classList.toggle('on', b.dataset.vote === vote));
+    const chip = el.querySelector('.chips .chip');
+    chip.className = 'chip' + (vote ? ' ' + vote : ''); chip.textContent = vote ? 'You: ' + LABEL[vote] : 'Not reviewed';
+    progress();
+    const st = el.querySelector('.status');
+    if (!CFG.apiUrl) { st.className = 'status'; st.textContent = 'Saved on this device'; return; }
+    st.className = 'status'; st.textContent = 'Saving';
+    api({action:'vote', batch:C.batch, reviewer:me, item:it.id, title:it.title, vote, note})
+      .then(r => { if (r && r.ok) { st.textContent = 'Saved'; } else throw new Error(r && r.error); })
+      .catch(() => { st.className = 'status err'; st.textContent = "Couldn't save. Check your connection and tap again."; });
+    if (vote && !quiet) setTimeout(() => {
+      if (C.items.every(x => votes[x.id] && votes[x.id].vote)) { $('done').hidden = false; $('done').scrollIntoView({behavior:'smooth'}); }
+    }, 400);
+  }
+
+  function progress(){
+    const n = C.items.length, done = C.items.filter(it => votes[it.id] && votes[it.id].vote).length;
+    const c = {approve:0, maybe:0, no:0};
+    C.items.forEach(it => { const v = votes[it.id] && votes[it.id].vote; if (v) c[v]++; });
+    $('ptext').textContent = done + ' of ' + n + ' reviewed';
+    $('counts').textContent = c.approve + ' yes · ' + c.maybe + ' maybe · ' + c.no + ' no';
+    $('bar').style.width = (n ? done / n * 100 : 0) + '%';
+    $('done').hidden = done < n;
+  }
+})();
+</script>
+</body>
+</html>
