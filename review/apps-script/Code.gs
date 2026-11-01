@@ -1,3 +1,4 @@
+/** @OnlyCurrentDoc */
 /**
  * Content review vote store.
  * Lives inside a Google Sheet (Extensions > Apps Script). Deploy as a web app:
