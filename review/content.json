@@ -249,6 +249,27 @@
         ]
       ],
       "note": "Question for you: does the $99 weekday plan have openings at every location?"
+    },
+    {
+      "id": "youtube-ep1-golf-vs-scotland",
+      "type": "video",
+      "label": "YouTube Series",
+      "title": "Golf Is a Terrible Idea, Episode 1: Golf vs. Scotland",
+      "src": "media/youtube-ep1-golf-vs-scotland.mp4",
+      "poster": "media/youtube-ep1-golf-vs-scotland-poster.jpg",
+      "thumb": "media/youtube-ep1-golf-vs-scotland-thumb.jpg",
+      "specs": "About 1 minute 45 seconds, horizontal, full episode for YouTube, with Shorts cut from the best moments",
+      "fields": [],
+      "callout": {
+        "title": "Why this one is different: it's valuetainment, not an ad",
+        "body": [
+          "This video isn't an ad, so it shouldn't feel like one. It's what's called valuetainment: content that's worth watching on its own. It's a funny animated history of golf, and every episode is brought to you by The Golffice.",
+          "People who love golf find videos like this on YouTube and watch them just for fun. Every time they do, they hear The Golffice name. It's the same idea as a big brand sponsoring a show. It builds an audience that knows and likes The Golffice before they ever see an ad.",
+          "That's why it doesn't push prices or bookings the way the other ads do, and why it's mostly about golf instead of The Golffice. The plan is a series of short episodes, each posted in full on YouTube, with the funniest moments cut into YouTube Shorts and Reels."
+        ]
+      },
+      "wide": true,
+      "note": "Storyboard animatic. If approved, the episode gets polished and the series continues."
     }
   ]
 }
