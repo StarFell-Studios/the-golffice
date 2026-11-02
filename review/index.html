@@ -58,6 +58,10 @@ h1 span{color:var(--sienna)}
 .media.wide video{max-width:100%;max-height:none}
 .ownernote{border:1px solid var(--teal);background:rgba(63,138,144,.12);border-radius:8px;padding:10px 14px;font-size:14px}
 .lbl.concept{color:var(--maybe)}
+.lbl.series{color:#7fc4ff}
+.callout{border:2px solid var(--sienna);background:rgba(208,106,51,.12);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:8px}
+.callout .ctitle{font:800 24px/1.1 var(--display);color:var(--sienna);letter-spacing:.02em}
+.callout p{margin:0;font-size:16px;line-height:1.5}
 .toggle{display:flex;gap:6px;justify-content:center}
 .toggle button{background:var(--panel2);border:1px solid var(--line);color:var(--muted);border-radius:20px;padding:6px 12px;font:600 13px var(--body);cursor:pointer}
 .toggle button.on{color:var(--fg);border-color:var(--teal)}
@@ -206,7 +210,7 @@ footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
     return `<article class="card${cls}" data-id="${esc(it.id)}">
       <button class="head" type="button" aria-expanded="false">
         <img src="${esc(it.thumb || it.poster || it.src)}" alt="" loading="lazy">
-        <div class="ht"><div class="lbl${it.label === 'Concept' ? ' concept' : ''}">${esc(it.label)}</div><div class="ttl">${esc(it.title)}</div><div class="chips">${chips}</div></div>
+        <div class="ht"><div class="lbl${it.label === 'Concept' ? ' concept' : it.label === 'YouTube Series' ? ' series' : ''}">${esc(it.label)}</div><div class="ttl">${esc(it.title)}</div><div class="chips">${chips}</div></div>
         <svg class="chev" width="20" height="20" viewBox="0 0 20 20" aria-hidden="true"><path d="M5 8l5 5 5-5" fill="none" stroke="currentColor" stroke-width="2"/></svg>
       </button>
       <div class="body">
@@ -220,6 +224,7 @@ footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
           <button type="button" class="no${v.vote==='no'?' on':''}" data-vote="no">No</button>
         </div>
         <textarea placeholder="Notes or changes (optional)" maxlength="1500">${esc(v.note || '')}</textarea>
+        ${it.callout ? `<div class="callout"><div class="ctitle">${esc(it.callout.title)}</div>${it.callout.body.map(t => `<p>${esc(t)}</p>`).join('')}</div>` : ''}
         <div class="row"><span class="status"></span><button type="button" class="next">Next</button></div>
         ${oth ? `<div class="others">${oth}</div>` : ''}
       </div>
