@@ -18,7 +18,7 @@
 }
 *{box-sizing:border-box}
 html,body{margin:0}
-body{background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+body{overflow-anchor:none;background:var(--bg);color:var(--fg);font:16px/1.5 var(--body);-webkit-font-smoothing:antialiased}
 .wrap{max-width:760px;margin:0 auto;padding:0 16px 80px}
 header{padding:28px 0 18px;display:flex;flex-direction:column;gap:14px}
 .brand{display:flex;align-items:center;gap:14px}
@@ -233,7 +233,7 @@ footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
 
   function wire(it){
     const el = document.querySelector(`.card[data-id="${CSS.escape(it.id)}"]`);
-    el.querySelector('.head').addEventListener('click', () => open(it.id, true, true));
+    el.querySelector('.head').addEventListener('click', () => open(it.id, false, true, true));
     el.querySelectorAll('.vote button').forEach(b => b.addEventListener('click', () => {
       const cur = (votes[it.id] || {}).vote;
       save(it, b.dataset.vote === cur ? '' : b.dataset.vote, el.querySelector('textarea').value, el);
@@ -254,7 +254,11 @@ footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
     });
   }
 
-  function open(id, scroll, toggle){
+  function stickyH(){ const p = document.querySelector('.progress'); return p ? p.getBoundingClientRect().height : 0; }
+  function open(id, scroll, toggle, anchor){
+    const tgt = document.querySelector(`.card[data-id="${CSS.escape(id)}"]`);
+    const head = tgt && tgt.querySelector('.head');
+    const before = head ? head.getBoundingClientRect().top : 0;
     document.querySelectorAll('.card').forEach(c => {
       const isT = c.dataset.id === id;
       const willOpen = isT && !(toggle && c.classList.contains('open'));
@@ -262,7 +266,14 @@ footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
       c.classList.toggle('open', willOpen);
       c.querySelector('.head').setAttribute('aria-expanded', willOpen);
     });
-    if (scroll) { const c = document.querySelector(`.card[data-id="${CSS.escape(id)}"]`); setTimeout(() => c && c.scrollIntoView({behavior:'smooth', block:'start'}), 60); }
+    if (!head) return;
+    if (anchor) {
+      // keep the tapped header exactly where it was on screen
+      const top = Math.max(before, stickyH() + 8);
+      window.scrollBy(0, head.getBoundingClientRect().top - top);
+    } else if (scroll) {
+      window.scrollTo({top: head.getBoundingClientRect().top + window.scrollY - stickyH() - 8, behavior: 'smooth'});
+    }
   }
 
   function save(it, vote, note, el, quiet){
