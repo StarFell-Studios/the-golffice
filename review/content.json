@@ -1,8 +1,8 @@
 {
   "client": "The Golffice",
-  "batch": "2026-11-v2",
-  "title": "November ads, round one",
-  "intro": "Everything here is a concept for round one. The videos are storyboard animatics that show each idea before we build the final version. Watch each one, then tap Approve, Maybe or No, and add a note if something should change. Your picks save automatically.",
+  "batch": "2026-11-v3",
+  "title": "November, round two",
+  "intro": "Round two. The ads and videos you approved in round one are now finished, plus a second episode of the YouTube series and 15 new image posts. Nothing posts until you approve it. Watch or look at each one, then tap Approve, Maybe or No, and add a note if something should change. Your picks save automatically.",
   "reviewers": {
     "michael": "Michael",
     "kerry": "Kerry",
@@ -10,19 +10,19 @@
   },
   "items": [
     {
-      "id": "reel-nature-doc",
+      "id": "nature-doc-final",
       "type": "video",
       "label": "Reel",
-      "title": "Nature Documentary",
-      "src": "media/reel-nature-doc.mp4",
-      "thumb": "media/reel-nature-doc-thumb.jpg",
-      "specs": "15 seconds, vertical for Reels and Stories, with a British narrator and music",
-      "poster": "media/reel-nature-doc-poster.jpg",
+      "title": "Nature Documentary (final)",
+      "src": "media/reel-nature-doc-final.mp4",
+      "thumb": "media/reel-nature-doc-final-thumb.jpg",
+      "poster": "media/reel-nature-doc-final-poster.jpg",
+      "specs": "20 seconds, vertical for Reels and Stories, British narrator and music",
       "wide": false,
       "fields": [
         [
           "Voiceover",
-          "Here we observe the male golfer in his natural habitat. He has gathered his herd for the big game. Now the ritual begins. The herd will mock his slice for three straight hours. Book your bay at The Golffice."
+          "Here we observe the male golfer in his natural habitat. He has gathered his herd for the big game. Now the ritual begins. The herd will mock his slice for three straight hours. Book your bay at The Golffice. Open twenty four hours a day, seven days a week. Rain or shine, always tee time."
         ],
         [
           "Headline",
@@ -30,246 +30,429 @@
         ],
         [
           "Post text",
-          "Nature is beautiful when you see it up close. Watch the male golfer gather his herd for the big game, and then watch the herd roast his slice for three straight hours. Book your private bay in Birmingham, Huntsville or Madison at thegolffice.com."
+          "Nature is beautiful when you see it up close. Watch the male golfer gather his herd for the big game, and then watch the herd roast his slice for three straight hours. Book a bay in Birmingham, Huntsville or Madison at thegolffice.com."
         ]
-      ]
+      ],
+      "note": "The finished version of the concept you approved in round one."
     },
     {
-      "id": "spot-frost-delay",
+      "id": "frost-delay-final",
       "type": "video",
-      "label": "Concept",
-      "title": "Frost Delay",
-      "src": "media/spot-frost-delay.mp4",
-      "thumb": "media/spot-frost-delay-thumb.jpg",
-      "specs": "30 seconds, horizontal, silent sketch with dialogue and voiceover shown as captions",
-      "poster": "media/spot-frost-delay-poster.jpg",
-      "wide": true,
+      "label": "Spot",
+      "title": "Frost Delay (final)",
+      "src": "media/spot-frost-delay-final.mp4",
+      "thumb": "media/spot-frost-delay-final-thumb.jpg",
+      "poster": "media/spot-frost-delay-final-poster.jpg",
+      "specs": "28 seconds, vertical for Reels and Stories, with dialogue and music",
+      "wide": false,
       "fields": [
-        [
-          "Voiceover",
-          "It's always seventy degrees at The Golffice."
-        ],
         [
           "Headline",
           "Frost delays don't happen here."
         ],
         [
           "Post text",
-          "Frost delays don't happen here. While the fairway outside is frozen solid, it's 70 degrees in your private bay at The Golffice. Book in Birmingham, Huntsville or Madison at thegolffice.com."
+          "Frost delays don't happen here. While the fairway outside is frozen solid, it's 70 degrees in your bay at The Golffice. Book in Birmingham, Huntsville or Madison at thegolffice.com."
         ]
       ],
-      "note": "Storyboard animatic. Approved ideas get built and polished into the final video."
+      "note": "The finished version of the concept you approved in round one, filmed with the new cast in a real bay."
     },
     {
-      "id": "reel-office-hours",
-      "type": "video",
-      "label": "Reel",
-      "title": "Office Hours",
-      "src": "media/reel-office-hours.mp4",
-      "thumb": "media/reel-office-hours-thumb.jpg",
-      "specs": "15 seconds, vertical for Reels and Stories, with voiceover and music",
-      "poster": "media/reel-office-hours-poster.jpg",
-      "wide": false,
-      "fields": [
+      "id": "ad-holiday-party",
+      "type": "image",
+      "label": "Image ad",
+      "title": "Holiday Party",
+      "src": "media/image-holiday-party-1080x1350.jpg",
+      "thumb": "media/image-holiday-party-1080x1350-thumb.jpg",
+      "variants": [
         [
-          "Voiceover",
-          "Tell your boss you're working late at the office. It's not a lie if it's The Golffice. Grab a private bay for up to eight and bring the whole team. The Golffice is now booking office hours."
+          "Feed (4:5)",
+          "media/image-holiday-party-1080x1350.jpg"
         ],
         [
+          "Square",
+          "media/image-holiday-party-1080x1080.jpg"
+        ],
+        [
+          "Story",
+          "media/image-holiday-party-1080x1920.jpg"
+        ]
+      ],
+      "specs": "Three sizes: feed, square and story. Tap a size to see it.",
+      "fields": [
+        [
           "Headline",
-          "Technically, you're at the office."
+          "The office party people show up for."
         ],
         [
           "Post text",
-          "Tell the boss you're working late, because technically you will be at the office. Grab a private bay at The Golffice for up to 8 people and bring the whole team. Book in Birmingham, Huntsville or Madison at thegolffice.com."
+          "Now booking December dates. Bring the whole team to The Golffice for a holiday party in your own semi-private bay. Book in Birmingham, Huntsville or Madison at thegolffice.com."
         ]
-      ]
+      ],
+      "note": "Built first, as you asked. The button goes to the events page."
     },
     {
-      "id": "spot-pit-crew",
-      "type": "video",
-      "label": "Concept",
-      "title": "The Pit Crew",
-      "src": "media/spot-pit-crew.mp4",
-      "thumb": "media/spot-pit-crew-thumb.jpg",
-      "specs": "30 seconds, horizontal, silent sketch with dialogue and voiceover shown as captions",
-      "poster": "media/spot-pit-crew-poster.jpg",
-      "wide": true,
-      "fields": [
+      "id": "ad-daily-tee-time",
+      "type": "image",
+      "label": "Image ad",
+      "title": "Daily Tee Time",
+      "src": "media/image-daily-tee-time-1080x1350.jpg",
+      "thumb": "media/image-daily-tee-time-1080x1350-thumb.jpg",
+      "variants": [
         [
-          "Voiceover",
-          "Game day bays are $99 for up to 8 people for 3 hours."
+          "Feed (4:5)",
+          "media/image-daily-tee-time-1080x1350.jpg"
         ],
         [
+          "Square",
+          "media/image-daily-tee-time-1080x1080.jpg"
+        ],
+        [
+          "Story",
+          "media/image-daily-tee-time-1080x1920.jpg"
+        ]
+      ],
+      "specs": "Three sizes: feed, square and story. Tap a size to see it.",
+      "fields": [
+        [
           "Headline",
-          "Watch the game. Play between plays."
+          "Your daily tee time is waiting."
         ],
         [
           "Post text",
-          "Every commercial break is a chance to get a swing in. A game day bay at The Golffice holds up to 8 people for 3 hours with the game on in your bay, and it's $99 a bay plus tax and fees. Book in Birmingham, Huntsville or Madison at thegolffice.com."
+          "Play an hour every day before 4 pm for $99 a month. Practice your swing or play a round. See the daily plan at thegolffice.com."
         ]
       ],
-      "note": "Storyboard animatic. Approved ideas get built and polished into the final video."
+      "note": "Renamed from Weekday Tee Time and built around the $99 play every day plan, per Michael's note."
     },
     {
-      "id": "image-office-party",
+      "id": "ad-office-party",
       "type": "image",
       "label": "Image ad",
       "title": "Office Party",
-      "src": "media/image-office-party-4x5.jpg",
-      "thumb": "media/image-office-party-thumb.jpg",
-      "specs": "Feed post, tall and square versions",
-      "alt_src": "media/image-office-party-1x1.jpg",
-      "fields": [
+      "src": "media/image-office-party-1080x1350.jpg",
+      "thumb": "media/image-office-party-1080x1350-thumb.jpg",
+      "variants": [
         [
-          "Headline",
-          "Ask us about open dates."
+          "Feed (4:5)",
+          "media/image-office-party-1080x1350.jpg"
         ],
         [
-          "Post text",
-          "Bring the whole office out to play. The Golffice has private bays and lounge space for an office party or a team meeting, and you can bring in your own food or have it catered. We're booking events in Birmingham now, so ask which dates are open at thegolffice.com."
+          "Square",
+          "media/image-office-party-1080x1080.jpg"
+        ],
+        [
+          "Story",
+          "media/image-office-party-1080x1920.jpg"
         ]
       ],
-      "note": "Question for you: are events open in Huntsville and Madison too? The ad's footer names all three cities."
-    },
-    {
-      "id": "image-game-day",
-      "type": "image",
-      "label": "Image ad",
-      "title": "Game Day Bay",
-      "src": "media/image-game-day-4x5.jpg",
-      "thumb": "media/image-game-day-thumb.jpg",
-      "specs": "Feed post, tall and square versions",
-      "alt_src": "media/image-game-day-1x1.jpg",
+      "specs": "Three sizes: feed, square and story. Tap a size to see it.",
       "fields": [
         [
           "Headline",
-          "Your crew gets its own bay for $99."
+          "Bring the whole office."
         ],
         [
           "Post text",
-          "The big game is on this Saturday, and your crew needs a home base. Grab a private bay at The Golffice for up to 8 people for 3 hours. It's $99 a bay per game plus tax and fees, and you bring your own cooler. Book a bay in Birmingham, Huntsville or Madison at thegolffice.com."
-        ]
-      ]
-    },
-    {
-      "id": "spot-merger",
-      "type": "video",
-      "label": "Concept",
-      "title": "The Merger",
-      "src": "media/spot-merger.mp4",
-      "thumb": "media/spot-merger-thumb.jpg",
-      "specs": "30 seconds, horizontal, silent sketch with dialogue and voiceover shown as captions",
-      "poster": "media/spot-merger-poster.jpg",
-      "wide": true,
-      "fields": [
-        [
-          "Voiceover",
-          "Every meeting runs long at The Golffice."
-        ],
-        [
-          "Headline",
-          "Now booking office hours."
-        ],
-        [
-          "Post text",
-          "Every meeting runs long at The Golffice. Grab a private bay for the afternoon and bring the whole team. Book in Birmingham, Huntsville or Madison at thegolffice.com."
+          "Holiday parties and team outings in your own semi-private bay. Ask us about open dates at thegolffice.com. Birmingham, Huntsville and Madison."
         ]
       ],
-      "note": "Storyboard animatic. Approved ideas get built and polished into the final video."
+      "note": "Updated with a current room photo, no lounge in the copy, and the button goes to the events page."
     },
     {
-      "id": "reel-game-day",
-      "type": "video",
-      "label": "Reel",
-      "title": "Game Day",
-      "src": "media/reel-game-day.mp4",
-      "thumb": "media/reel-game-day-thumb.jpg",
-      "specs": "15 seconds, vertical for Reels and Stories, with voiceover and music",
-      "poster": "media/reel-game-day-poster.jpg",
-      "wide": false,
-      "fields": [
-        [
-          "Voiceover",
-          "The big game is on Saturday, so bring the crew. Get a private bay for up to eight for ninety nine bucks. Bring your cooler and play golf at halftime. At The Golffice, it's always tee time, rain or shine."
-        ],
-        [
-          "Headline",
-          "Book a game day bay for $99."
-        ],
-        [
-          "Post text",
-          "The big game is on Saturday, so bring the crew to The Golffice. A private bay holds up to 8 people for 3 hours, and it's $99 a bay plus tax and fees. Bring your own cooler and play a round at halftime. Book in Birmingham, Huntsville or Madison at thegolffice.com."
-        ]
-      ]
-    },
-    {
-      "id": "spot-tailgate",
-      "type": "video",
-      "label": "Concept",
-      "title": "Tailgate on the Fairway",
-      "src": "media/spot-tailgate.mp4",
-      "thumb": "media/spot-tailgate-thumb.jpg",
-      "specs": "30 seconds, horizontal, silent sketch with dialogue and voiceover shown as captions",
-      "poster": "media/spot-tailgate-poster.jpg",
-      "wide": true,
-      "fields": [
-        [
-          "Voiceover",
-          "Rain or shine, the game is on at The Golffice."
-        ],
-        [
-          "Headline",
-          "Tailgate on the Fairway."
-        ],
-        [
-          "Post text",
-          "It's raining on the tailgate again, but the game is on in Bay 3 and it's dry in here. Grab a private game day bay for up to 8 people for $99 plus tax and fees. Book in Birmingham, Huntsville or Madison at thegolffice.com."
-        ]
-      ],
-      "note": "Storyboard animatic. Approved ideas get built and polished into the final video."
-    },
-    {
-      "id": "image-weekday",
-      "type": "image",
-      "label": "Image ad",
-      "title": "Weekday Tee Time",
-      "src": "media/image-weekday-4x5.jpg",
-      "thumb": "media/image-weekday-thumb.jpg",
-      "specs": "Feed post, tall and square versions",
-      "alt_src": "media/image-weekday-1x1.jpg",
-      "fields": [
-        [
-          "Headline",
-          "Weekday plans start at $99 a month."
-        ],
-        [
-          "Post text",
-          "Your weekday tee time is waiting at The Golffice. Weekday plans start at $99 a month, and booking a quiet morning bay is simple. The bay is set up and ready when you walk in, and we're open 24/7 when the weather won't cooperate. See the plans at thegolffice.com."
-        ]
-      ],
-      "note": "Question for you: does the $99 weekday plan have openings at every location?"
-    },
-    {
-      "id": "youtube-ep1-golf-vs-scotland",
+      "id": "ep1-wide",
       "type": "video",
       "label": "YouTube Series",
-      "title": "Golf Is a Terrible Idea, Episode 1: Golf vs. Scotland",
-      "src": "media/youtube-ep1-golf-vs-scotland.mp4",
-      "poster": "media/youtube-ep1-golf-vs-scotland-poster.jpg",
-      "thumb": "media/youtube-ep1-golf-vs-scotland-thumb.jpg",
-      "specs": "About 1 minute 45 seconds, horizontal, full episode for YouTube, with Shorts cut from the best moments",
-      "fields": [],
-      "callout": {
-        "title": "Why this one is different: it's valuetainment, not an ad",
-        "body": [
-          "This video isn't an ad, so it shouldn't feel like one. It's what's called valuetainment: content that's worth watching on its own. It's a funny animated history of golf, and every episode is brought to you by The Golffice.",
-          "People who love golf find videos like this on YouTube and watch them just for fun. Every time they do, they hear The Golffice name. It's the same idea as a big brand sponsoring a show. It builds an audience that knows and likes The Golffice before they ever see an ad.",
-          "That's why it doesn't push prices or bookings the way the other ads do, and why it's mostly about golf instead of The Golffice. The plan is a series of short episodes, each posted in full on YouTube, with the funniest moments cut into YouTube Shorts and Reels."
-        ]
-      },
+      "title": "Golf Is a Terrible Idea, Ep 1: Golf vs. Scotland (wide)",
+      "src": "media/youtube-ep1-wide.mp4",
+      "thumb": "media/youtube-ep1-wide-thumb.jpg",
+      "poster": "media/youtube-ep1-wide-poster.jpg",
+      "specs": "1 minute 46 seconds, horizontal for YouTube",
       "wide": true,
-      "note": "Storyboard animatic. If approved, the episode gets polished and the series continues."
+      "fields": [
+        [
+          "Story",
+          "A lot of countries claim they invented golf. Scotland is the only country that tried to kill it. In 1457 King James the Second makes golf illegal, and everybody goes golfing anyway. Three kings ban it, it never works, and in 1502 the same king who banned it buys himself a set of golf clubs. The royal receipt still exists."
+        ],
+        [
+          "Post text",
+          "In 1457 the King of Scotland made golf illegal. It did not go well for the King. Episode 1 of Golf Is a Terrible Idea, a funny history of golf brought to you by The Golffice."
+        ]
+      ],
+      "note": "The episode you approved, with the final end card."
+    },
+    {
+      "id": "ep1-vertical",
+      "type": "video",
+      "label": "YouTube Series",
+      "title": "Golf Is a Terrible Idea, Ep 1 (vertical)",
+      "src": "media/youtube-ep1-vertical.mp4",
+      "thumb": "media/youtube-ep1-vertical-thumb.jpg",
+      "poster": "media/youtube-ep1-vertical-poster.jpg",
+      "specs": "1 minute 46 seconds, vertical for Shorts, Reels and TikTok",
+      "wide": false,
+      "fields": [],
+      "note": "Same episode, redrawn for phones. Tell us if you like the vertical version."
+    },
+    {
+      "id": "ep2-wide",
+      "type": "video",
+      "label": "YouTube Series",
+      "title": "Golf Is a Terrible Idea, Ep 2: Golf vs. Geese (wide)",
+      "src": "media/youtube-ep2-wide.mp4",
+      "thumb": "media/youtube-ep2-wide-thumb.jpg",
+      "poster": "media/youtube-ep2-wide-poster.jpg",
+      "specs": "1 minute 20 seconds, horizontal for YouTube",
+      "wide": true,
+      "fields": [
+        [
+          "Voiceover",
+          "For four hundred years, every golf ball on Earth was full of goose. Golf Is a Terrible Idea is brought to you by The Golffice. It's called the featherie. You take a leather pouch, you boil a top hat's worth of goose feathers, and you stuff them in with an iron rod and your chest. A good ball maker could finish about four a day. One ball cost more than a club. And the second it rained, your very expensive ball turned into a wet sock and split open on the fairway. The geese were not thrilled either. Every round of golf cost them a coat. Then, in 1848, a Scottish student named Robert Paterson gets a statue in the mail from India, packed in gutta percha, a rubbery tree sap. He looks at the packing, rolls it into a ball, and hits it. It's cheap, it's tough, and it does not care about rain. The greatest featherie maker alive, Allan Robertson, is furious. He buys every new ball he can find and burns them. Legend says he fired his own apprentice, Old Tom Morris, for playing one. A few years later, Allan Robertson is playing gutties too. The geese never forgave us. That's why they still hiss at you on the course. Nobody hisses at you in a Golffice bay. Open twenty four seven in Birmingham, Huntsville and Madison. Next time, golf goes to the Moon."
+        ],
+        [
+          "Post text",
+          "For four hundred years, every golf ball was stuffed with goose feathers. Then it rained. Episode 2 of Golf Is a Terrible Idea, a funny history of golf brought to you by The Golffice."
+        ]
+      ],
+      "note": "New episode. Each one tells one true story where someone tried to stop golf and lost."
+    },
+    {
+      "id": "ep2-vertical",
+      "type": "video",
+      "label": "YouTube Series",
+      "title": "Golf Is a Terrible Idea, Ep 2 (vertical)",
+      "src": "media/youtube-ep2-vertical.mp4",
+      "thumb": "media/youtube-ep2-vertical-thumb.jpg",
+      "poster": "media/youtube-ep2-vertical-poster.jpg",
+      "specs": "1 minute 20 seconds, vertical for Shorts, Reels and TikTok",
+      "wide": false,
+      "fields": [],
+      "note": "Same episode, redrawn for phones."
+    },
+    {
+      "id": "post-01",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 1: The forecast",
+      "src": "media/post-p01-forecast-square.jpg",
+      "thumb": "media/post-p01-forecast-square-thumb.jpg",
+      "specs": "Square post, funny",
+      "fields": [
+        [
+          "Post text",
+          "We checked the forecast for the week. It looks like 70 degrees and dry, again. Book a bay at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-02",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 2: Frost on the fairway",
+      "src": "media/post-p02-frost-delay-square.jpg",
+      "thumb": "media/post-p02-frost-delay-square-thumb.jpg",
+      "specs": "Square post, funny",
+      "fields": [
+        [
+          "Post text",
+          "Frost on the fairway means you wait. Frost outside The Golffice means nothing at all. Book a bay at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-03",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 3: 3:17 am",
+      "src": "media/post-p03-317am-square.jpg",
+      "thumb": "media/post-p03-317am-square-thumb.jpg",
+      "specs": "Square post, funny",
+      "fields": [
+        [
+          "Post text",
+          "Can't sleep? Your bay is ready. We're open 24 hours a day, 7 days a week, and walk ins are welcome. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-04",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 4: Range Rat $99",
+      "src": "media/post-p04-range-rat-99-square.jpg",
+      "thumb": "media/post-p04-range-rat-99-square-thumb.jpg",
+      "specs": "Square post, promo",
+      "fields": [
+        [
+          "Post text",
+          "Range Rat is $99 a month for an hour in a bay every day before 4 pm. Practice your swing or play a round. Become a Range Rat at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-05",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 5: Pebble Beach tonight",
+      "src": "media/post-p05-pebble-tonight-square.jpg",
+      "thumb": "media/post-p05-pebble-tonight-square-thumb.jpg",
+      "specs": "Square post, clever",
+      "fields": [
+        [
+          "Post text",
+          "Pebble Beach doesn't need a plane ticket. Pick from over 2,700 courses in any bay tonight. Book at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-06",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 6: Always open",
+      "src": "media/post-p06-always-open-4x5.jpg",
+      "thumb": "media/post-p06-always-open-4x5-thumb.jpg",
+      "specs": "Feed post (4:5), promo",
+      "fields": [
+        [
+          "Post text",
+          "The course is always open. Rain or shine, it's dry and 70 degrees inside, any hour you want to play. Book a bay at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-07",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 7: Range Rat",
+      "src": "media/post-p07-range-rat-4x5.jpg",
+      "thumb": "media/post-p07-range-rat-4x5-thumb.jpg",
+      "specs": "Feed post (4:5), promo",
+      "fields": [
+        [
+          "Post text",
+          "Get an hour of play every day before 4 pm for $99 a month. Practice your swing or play a round, your call. Become a Range Rat at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-08",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 8: Every swing",
+      "src": "media/post-p08-every-swing-4x5.jpg",
+      "thumb": "media/post-p08-every-swing-4x5-thumb.jpg",
+      "specs": "Feed post (4:5), promo",
+      "fields": [
+        [
+          "Post text",
+          "Our launch monitor tracks ball and club data on every shot, so you'll know exactly why that one went right. Book a bay at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-09",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 9: Business between shots",
+      "src": "media/post-p09-business-between-shots-4x5.jpg",
+      "thumb": "media/post-p09-business-between-shots-4x5-thumb.jpg",
+      "specs": "Feed post (4:5), promo",
+      "fields": [
+        [
+          "Post text",
+          "Bring the team out of the conference room. We host corporate outings and team parties in our bays. Plan yours at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-10",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 10: Leagues",
+      "src": "media/post-p10-leagues-4x5.jpg",
+      "thumb": "media/post-p10-leagues-4x5-thumb.jpg",
+      "specs": "Feed post (4:5), promo",
+      "fields": [
+        [
+          "Post text",
+          "League options vary by location. Ask your Golffice what's running, or check thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-11",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 11: Weather app",
+      "src": "media/post-p11-weather-app-story.jpg",
+      "thumb": "media/post-p11-weather-app-story-thumb.jpg",
+      "specs": "Story, funny",
+      "fields": [
+        [
+          "Post text",
+          "Saturday says rain. Your tee time says otherwise. Book a bay at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-12",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 12: Bring the crew",
+      "src": "media/post-p12-bring-the-crew-story.jpg",
+      "thumb": "media/post-p12-bring-the-crew-story-thumb.jpg",
+      "specs": "Story, promo",
+      "fields": [
+        [
+          "Post text",
+          "Our bays are big enough for the golfers and everyone who came to heckle them. Bring the crew. Book at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-13",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 13: Birthday",
+      "src": "media/post-p13-birthday-story.jpg",
+      "thumb": "media/post-p13-birthday-story-thumb.jpg",
+      "specs": "Story, funny",
+      "fields": [
+        [
+          "Post text",
+          "Skip the bowling alley this year. Celebrate your birthday in a bay at The Golffice. Plan your party at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-14",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 14: Skip the wait",
+      "src": "media/post-p14-skip-the-wait-story.jpg",
+      "thumb": "media/post-p14-skip-the-wait-story-thumb.jpg",
+      "specs": "Story, promo",
+      "fields": [
+        [
+          "Post text",
+          "Our semi-private members get priority booking and members only rates. See the memberships at thegolffice.com. Find us in Birmingham, Huntsville and Madison."
+        ]
+      ]
+    },
+    {
+      "id": "post-15",
+      "type": "image",
+      "label": "Image post",
+      "title": "Post 15: Find your bay",
+      "src": "media/post-p15-find-your-bay-story.jpg",
+      "thumb": "media/post-p15-find-your-bay-story-thumb.jpg",
+      "specs": "Story, promo",
+      "fields": [
+        [
+          "Post text",
+          "Find us in Vestavia, on Hwy 280 and in Trussville around Birmingham, plus Huntsville and Madison. Every location is open 24/7."
+        ]
+      ]
     }
   ]
 }

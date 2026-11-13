@@ -202,6 +202,8 @@ footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
       .concat((others[it.id] || []).filter(o => o.vote).map(o => `<span class="chip ${esc(o.vote)}">${esc(C.reviewers[o.reviewer] || o.reviewer)}: ${LABEL[o.vote] || ''}</span>`)).join('');
     const media = it.type === 'video'
       ? `<div class="media${it.wide ? ' wide' : ''}"><video src="${esc(it.src)}" poster="${esc(it.poster || '')}" controls playsinline preload="none"></video></div>`
+      : it.variants
+      ? `<div class="media"><img src="${esc(it.variants[0][1])}" alt="${esc(it.title)}"></div><div class="toggle">${it.variants.map((v, i) => `<button type="button" class="${i ? '' : 'on'}" data-src="${esc(v[1])}">${esc(v[0])}</button>`).join('')}</div>`
       : `<div class="media"><img src="${esc(it.src)}" alt="${esc(it.title)}" data-a="${esc(it.src)}" data-b="${esc(it.alt_src || '')}"></div>` +
         (it.alt_src ? `<div class="toggle"><button type="button" class="on" data-v="a">Tall (feed)</button><button type="button" data-v="b">Square</button></div>` : '');
     const fields = (it.fields || []).map(f => `<div class="field"><b>${esc(f[0])}</b><p>${esc(f[1])}</p></div>`).join('');
@@ -250,7 +252,7 @@ footer{margin-top:30px;font-size:13px;color:var(--muted);text-align:center}
     if (tg) tg.addEventListener('click', e => {
       const b = e.target.closest('button'); if (!b) return;
       tg.querySelectorAll('button').forEach(x => x.classList.toggle('on', x === b));
-      const img = el.querySelector('.media img'); img.src = img.dataset[b.dataset.v];
+      const img = el.querySelector('.media img'); img.src = b.dataset.src || img.dataset[b.dataset.v];
     });
   }
 
