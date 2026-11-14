@@ -58,6 +58,32 @@
       "note": "The finished version of the concept you approved in round one, filmed with the new cast in a real bay."
     },
     {
+      "id": "office-hours",
+      "type": "video",
+      "label": "Reel",
+      "title": "Office Hours",
+      "src": "media/reel-office-hours.mp4",
+      "thumb": "media/reel-office-hours-thumb.jpg",
+      "poster": "media/reel-office-hours-poster.jpg",
+      "specs": "15 seconds, vertical for Reels and Stories, with voiceover and music",
+      "wide": false,
+      "fields": [
+        [
+          "Voiceover",
+          "Tell your boss you're working late at the office. It's not a lie if it's The Golffice. Grab a private bay for up to eight and bring the whole team. The Golffice is now booking office hours."
+        ],
+        [
+          "Headline",
+          "Technically, you're at the office."
+        ],
+        [
+          "Post text",
+          "Tell the boss you're working late, because technically you will be at the office. Bring the whole team to a bay at The Golffice in Birmingham, Huntsville or Madison. Book at thegolffice.com."
+        ]
+      ],
+      "note": "This is the same cut you approved in round one. Your changes are still coming: the last shot gets swapped for a current room, and \"private\" changes to \"semi-private\" in the voiceover."
+    },
+    {
       "id": "ad-holiday-party",
       "type": "image",
       "label": "Image ad",
