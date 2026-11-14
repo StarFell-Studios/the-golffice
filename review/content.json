@@ -256,6 +256,28 @@
       "note": "Same episode, redrawn for phones."
     },
     {
+      "id": "fore-real-ep1",
+      "type": "video",
+      "label": "Concept",
+      "title": "Fore Real Golf Stories, Ep 1: The Fairway That Ate a Man",
+      "src": "media/fore-real-ep1-sinkhole.mp4",
+      "thumb": "media/fore-real-ep1-sinkhole-thumb.jpg",
+      "poster": "media/fore-real-ep1-sinkhole-poster.jpg",
+      "specs": "1 minute 20 seconds, vertical for Reels, Shorts and TikTok, with voiceover and music",
+      "wide": false,
+      "fields": [
+        [
+          "Story",
+          "A new animated series of true, weird golf stories from local courses, sponsored by The Golffice. Episode 1: in 2013 a golfer at a course outside Waterloo, Illinois walked out to check his yardage on 14, and the fairway opened up under him. He dropped 18 feet into a sinkhole, and his buddy climbed down and made him a sling out of his own sweater. At The Golffice, the floor stays exactly where you left it."
+        ],
+        [
+          "Post text",
+          "A golfer walked out to check his yardage and the fairway swallowed him whole. This really happened. Fore Real Golf Stories, sponsored by The Golffice. Book your bay in Birmingham, Huntsville or Madison at thegolffice.com."
+        ]
+      ],
+      "note": "This is a very early rough draft, just to show you the concept. Right now it's storyboard frames with the voiceover laid over them. The finished episode will be a lot funnier with a lot more humor, have good animation for most of it, and be a really high quality episode. We make this same kind of animated series for Blue Collar Signs, and in the first week those videos were running on social they pulled in over 10,000 views and hundreds upon hundreds of likes. TikTok has only been up for a few days on top of that."
+    },
+    {
       "id": "post-01",
       "type": "image",
       "label": "Image post",
