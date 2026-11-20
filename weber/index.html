@@ -260,7 +260,7 @@ const ROLES = DEPTS.flatMap(d=>d.roles);
 
 /* ---------- state ---------- */
 const ALL = SECTIONS.flatMap(s=>s.qs).filter(q=>q.t!=="info");
-let answers = {}, hires = [], custom = [], status = "draft", openId = "biz";
+let answers = {}, hires = [], custom = [], status = "draft", openId = null;
 let docRef = null, saveTimer = null, saving = false, pending = false, downloads = null;
 const $ = id => document.getElementById(id);
 const esc = s => String(s==null?"":s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
