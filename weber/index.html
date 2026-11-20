@@ -1,0 +1,446 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<style>[hidden]{display:none!important}body{margin:0}</style>
+<script src="config.js"></script>
+<title>Weber Mortgage Agent Onboarding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f3f6f9; --panel:#ffffff; --ink:#16202b; --muted:#5d6b7a; --line:#d9e1e9; --soft:#eaf3fa;
+  --blue:#1b86c8; --blue-ink:#ffffff; --blue-deep:#13618f; --gold:#c98f00; --gold-soft:#fff6dd; --good:#2b7a4b;
+  --serif:"Playfair Display",Georgia,"Times New Roman",serif;
+  --sans:"Poppins",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0e151d; --panel:#16212c; --ink:#e8eef4; --muted:#9aaab9; --line:#283746; --soft:#152b3c;
+  --blue:#4aa8e3; --blue-ink:#07121b; --blue-deep:#8cc8f0; --gold:#f2bd3a; --gold-soft:#2c2614; --good:#5fc08a; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0e151d; --panel:#16212c; --ink:#e8eef4; --muted:#9aaab9; --line:#283746; --soft:#152b3c;
+  --blue:#4aa8e3; --blue-ink:#07121b; --blue-deep:#8cc8f0; --gold:#f2bd3a; --gold-soft:#2c2614; --good:#5fc08a; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.6;padding-inline:16px;padding-block:0 80px}
+.wrap{max-width:820px;margin:0 auto}
+/* header */
+.hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;padding-block:40px 28px}
+.plate{background:#fff;border-radius:14px;padding:16px;box-shadow:0 1px 2px rgba(0,0,0,.06);border:1px solid var(--line)}
+.plate img{display:block;width:118px;height:auto}
+.eyebrow{font-size:12px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue)}
+h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,6vw,50px);line-height:1.08;margin:6px 0 10px;text-wrap:balance}
+.who{color:var(--muted);margin:0;font-size:15px}
+.who b{color:var(--ink);font-weight:600}
+@media (max-width:560px){.hero{grid-template-columns:1fr;gap:18px}.plate img{width:96px}}
+/* progress bar */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);padding-block:12px;display:flex;align-items:center;gap:14px;flex-wrap:wrap;border-bottom:1px solid var(--line)}
+.meter{flex:1 1 200px;height:8px;background:var(--line);border-radius:6px;overflow:hidden}
+.meter i{display:block;height:100%;width:0;background:var(--blue);transition:width .3s}
+.count,.save{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.save.ok{color:var(--good)}
+/* intro note */
+.intro{background:var(--panel);border:1px solid var(--line);border-left:4px solid var(--gold);border-radius:12px;padding:20px 22px;margin-top:26px}
+.intro h2{font-family:var(--serif);font-size:24px;margin:0 0 8px}
+.intro p{margin:0 0 10px;max-width:66ch}
+.intro p:last-child{margin-bottom:0}
+/* accordion blocks */
+.block{scroll-margin-top:72px;background:var(--panel);border:1px solid var(--line);border-radius:12px;margin-top:14px;overflow:hidden}
+.block>button.head{all:unset;box-sizing:border-box;cursor:pointer;display:flex;align-items:center;gap:16px;width:100%;padding:18px 20px}
+.block>button.head:focus-visible{outline:3px solid var(--blue);outline-offset:-3px}
+.num{flex:none;width:38px;height:38px;border-radius:50%;display:grid;place-items:center;background:var(--soft);color:var(--blue-deep);font-weight:600;font-size:15px}
+.block.done .num{background:var(--blue);color:var(--blue-ink)}
+.ht{flex:1;min-width:0}
+.ht h3{margin:0;font-family:var(--serif);font-size:21px;line-height:1.25}
+.ht small{display:block;color:var(--muted);font-size:13.5px}
+.tally{font-size:13px;color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums}
+.chev{width:12px;height:12px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg);transition:transform .2s;margin-right:4px;flex:none}
+.block.open .chev{transform:rotate(-135deg)}
+.body{display:none;padding:4px 20px 24px;border-top:1px solid var(--line)}
+.block.open .body{display:grid;gap:4px}
+/* questions */
+.q{display:grid;gap:8px;padding-top:18px;border:0;margin:0;min-width:0}
+.q .l{font-weight:600;font-size:15.5px;padding:0}
+.q .help{font-size:14px;color:var(--muted);margin-top:-4px}
+.pre{font-size:13px;color:var(--blue-deep);background:var(--soft);border-radius:6px;padding:6px 10px}
+input[type=text],textarea{width:100%;font:inherit;font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px 12px}
+textarea{min-height:90px;resize:vertical}
+input[type=text]:focus,textarea:focus{outline:2px solid var(--blue);outline-offset:1px;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{position:relative}
+.chip input{position:absolute;opacity:0;inset:0;cursor:pointer;margin:0}
+.chip span{display:inline-block;padding:7px 14px;border-radius:999px;background:var(--bg);border:1px solid var(--line);font-size:14px;cursor:pointer;user-select:none}
+.chip input:checked+span{background:var(--blue);color:var(--blue-ink);border-color:var(--blue)}
+.chip input:focus-visible+span{outline:2px solid var(--gold);outline-offset:2px}
+.scale input{width:100%;accent-color:var(--blue)}
+.scale .ends{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted)}
+.val{color:var(--blue);font-weight:600;font-size:14px}
+/* hiring */
+.hire-note{background:var(--gold-soft);border:1px solid var(--line);border-radius:10px;padding:16px 18px;margin-top:16px}
+.hire-note b{display:block;font-family:var(--serif);font-size:19px;margin-bottom:4px}
+.hire-note p{margin:0 0 8px}
+.hire-note p:last-child{margin:0}
+.dept{margin-top:22px}
+.dept h4{margin:0 0 10px;font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.roles{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}
+.role{all:unset;box-sizing:border-box;cursor:pointer;border:1.5px solid var(--line);border-radius:10px;padding:14px 14px 12px;background:var(--bg);display:grid;gap:4px;align-content:start;position:relative;min-width:0}
+.role:hover{border-color:var(--blue)}
+.role:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.role b{font-size:15px;padding-right:28px}
+.role span{font-size:13.5px;color:var(--muted);line-height:1.45}
+.role em{font-style:normal;font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold)}
+.role .tick{position:absolute;top:12px;right:12px;width:20px;height:20px;border-radius:50%;border:1.5px solid var(--line);display:grid;place-items:center;font-size:12px;color:transparent}
+.role.on{border-color:var(--blue);background:var(--soft)}
+.role.on .tick{background:var(--blue);border-color:var(--blue);color:var(--blue-ink)}
+.addbtn{all:unset;box-sizing:border-box;cursor:pointer;border:1.5px dashed var(--blue);color:var(--blue-deep);border-radius:10px;padding:14px;display:grid;place-items:center;text-align:center;font-weight:600;min-height:92px}
+.addbtn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.custom{border-style:solid}
+.custom .x{all:unset;cursor:pointer;font-size:12.5px;color:var(--muted);text-decoration:underline;justify-self:start;margin-top:4px}
+.hired{margin-top:22px;padding:14px 16px;border-radius:10px;background:var(--soft);font-size:14.5px}
+.hired b{font-weight:600}
+/* modal */
+[hidden]{display:none!important}
+.scrim{position:fixed;inset:0;background:rgba(8,14,20,.55);display:grid;place-items:center;padding:16px;z-index:20}
+.modal{background:var(--panel);color:var(--ink);border-radius:14px;max-width:540px;width:100%;padding:24px 22px;max-height:calc(100% - 32px);overflow:auto;box-shadow:0 20px 50px rgba(0,0,0,.3)}
+.modal h3{font-family:var(--serif);font-size:24px;margin:0 0 4px}
+.modal p{margin:0 0 6px;color:var(--muted);font-size:14.5px}
+.modal .row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;flex-wrap:wrap}
+.btn{font:inherit;font-weight:600;font-size:15px;border-radius:8px;padding:10px 18px;cursor:pointer;border:1px solid var(--line);background:var(--bg);color:var(--ink)}
+.btn.pri{background:var(--blue);border-color:var(--blue);color:var(--blue-ink)}
+.btn:focus-visible{outline:3px solid var(--gold);outline-offset:2px}
+.err{color:#c0392b;font-size:13.5px;min-height:1em}
+/* footer */
+.foot{margin-top:28px;background:var(--blue-deep);color:var(--panel);border-radius:12px;padding:22px;display:flex;gap:16px;align-items:center;flex-wrap:wrap;justify-content:space-between}
+:root:not([data-theme="light"]) .foot{color:var(--bg)}
+.foot p{margin:0;max-width:52ch;min-width:0}
+.foot .acts{display:flex;gap:10px;flex-wrap:wrap}
+.foot .btn{border-color:transparent}
+.foot .btn.pri{background:var(--gold);border-color:var(--gold);color:#1a1405}
+.note{font-size:13.5px;color:var(--muted);margin-top:12px}
+.sign{margin-top:26px;font-size:13px;color:var(--muted);text-align:center}
+@media (prefers-reduced-motion:reduce){.meter i,.chev{transition:none}}
+</style>
+
+</head><body>
+<div class="wrap">
+  <header class="hero">
+    <div class="plate"><img alt="Weber Mortgage" src="logo.png"></div>
+    <div>
+      <div class="eyebrow">Agent onboarding questionnaire</div>
+      <h1>Building your agent team at Weber Mortgage</h1>
+      <p class="who">For <b>Michael Weber</b>, owner · Prepared by Mike Uhlir, Character Brand</p>
+    </div>
+  </header>
+
+  <div class="bar" role="status">
+    <div class="meter" aria-hidden="true"><i id="meter"></i></div>
+    <div class="count" id="count"></div>
+    <div class="save" id="save">Loading</div>
+  </div>
+
+  <section class="intro">
+    <h2>How this works</h2>
+    <p>You saw what the agents can do in the demo. This questionnaire is how we build a team that fits Weber Mortgage. Your answers become the brand guide your agents follow and the team itself.</p>
+    <p>Tap a section to open it. Short answers are fine. We've filled in what we already found on webermortgage.com, so you only need to correct anything that's wrong. Anything you skip, we'll decide for you and run it by you before it goes live.</p>
+    <p>Your answers save as you go, so you can stop and come back anytime.</p>
+  </section>
+
+  <form id="form" autocomplete="off"></form>
+
+  <div class="foot">
+    <p id="footText">When you're done, press Send to Mike. You can still change answers afterward and they'll keep saving.</p>
+    <div class="acts">
+      <button class="btn" id="copy" type="button">Copy my answers</button>
+      <button class="btn pri" id="send" type="button">Send to Mike</button>
+    </div>
+  </div>
+  <p class="note" id="note"></p>
+  <p class="sign">Weber Mortgage · NMLS 219938 · 1442 Montgomery Hwy, Vestavia Hills, AL 35216</p>
+</div>
+
+<div class="scrim" id="scrim" hidden>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="mTitle">
+    <h3 id="mTitle">Add a custom agent</h3>
+    <p>Hiring someone we didn't list? Write the job like you'd post it for a real hire.</p>
+    <div class="q"><label class="l" for="mJob">Job title</label><input type="text" id="mJob" placeholder="For example: Builder relations manager"></div>
+    <div class="q"><label class="l" for="mName">A name for them <span style="color:var(--muted);font-weight:400">(optional, we can pick one)</span></label><input type="text" id="mName"></div>
+    <div class="q"><label class="l" for="mWhat">What do they do every day?</label><textarea id="mWhat" placeholder="What you'd hand them, who they work with, what they report back to you"></textarea></div>
+    <div class="q"><label class="l" for="mGood">What does a great job look like after 90 days?</label><textarea id="mGood" style="min-height:70px"></textarea></div>
+    <div class="err" id="mErr"></div>
+    <div class="row"><button class="btn" type="button" id="mCancel">Cancel</button><button class="btn pri" type="button" id="mSave">Add to my team</button></div>
+  </div>
+</div>
+
+<script>
+/* ---------- the questions ---------- */
+const SECTIONS = [
+ {id:"biz", title:"Weber Mortgage today", sub:"Check what we found on your website", qs:[
+  {id:"facts_ok", t:"radio", l:"Here's what we found. Is it right?", pre:"Weber Mortgage, a local, family owned, second generation mortgage broker in Vestavia Hills. NMLS 219938. Phone (205) 823-6701. Tagline: \"Home loans that lead to home memories.\" Home purchase, refinance and cash-out refinance, VA, USDA, home equity and new construction loans. 4.8 stars from 200 Google reviews.", o:["Yes, that's right","Mostly, I'll fix it below"]},
+  {id:"facts_fix", t:"area", l:"Anything to correct or add?", h:"Loan types we missed or the states you're licensed in."},
+  {id:"story", t:"area", l:"Tell us the family story.", h:"Who started it and what being second generation means to you and your clients."},
+  {id:"team", t:"area", l:"Who's on your human team today, and what does each person do?", h:"Your site and reviews mention Richard Behr, Kim, Mark Achuff, Michael Bailey, Sherrie and John. Correct us."},
+  {id:"why", t:"area", l:"Why do people pick Weber Mortgage over a big bank or an online lender?"}
+ ]},
+ {id:"cust", title:"Your borrowers and partners", sub:"Who you serve and where they come from", qs:[
+  {id:"borrowers", t:"chips", l:"Who are your best clients?", o:["First-time buyers","Move-up buyers","Veterans and military families","Rural buyers (USDA)","Building a new home","Refinancing","Cash-out for projects or debt","Retirees and downsizers","Self-employed","Investors"]},
+  {id:"borrowers_more", t:"area", l:"Describe your favorite client to work with."},
+  {id:"sources", t:"chips", l:"Where does your business come from today?", o:["Realtor referrals","Builder referrals","Past clients and their referrals","Google search","Google reviews","Facebook","Instagram","YouTube","Your website","Radio, TV or print","Community events"]},
+  {id:"area", t:"text", l:"Which cities and areas matter most?", h:"Your reviews mention Birmingham and Huntsville."},
+  {id:"pain", t:"area", l:"What do borrowers worry about most when they first call you?"}
+ ]},
+ {id:"char", title:"Your brand as a character", sub:"How Weber Mortgage sounds and acts", qs:[
+  {id:"character", t:"area", l:"If Weber Mortgage walked into a room as a person, who would it be?", h:"We treat a brand as a character, not a logo. Give us their age, background, how they talk and how they make people feel."},
+  {id:"voice_ref", t:"area", l:"Name a real person, show or brand whose voice is close to that."},
+  {id:"warmth", t:"scale", l:"How warm and personal?", ends:["Calm and businesslike","Like family"]},
+  {id:"humor", t:"scale", l:"How much humor?", ends:["Straight and serious","Lighthearted and fun"]},
+  {id:"belief", t:"area", l:"What does Weber Mortgage believe about home and money that your clients believe too?"},
+  {id:"say", t:"area", l:"Words and phrases that sound like you"},
+  {id:"never", t:"area", l:"Words, topics or tones you never want used"}
+ ]},
+ {id:"day", title:"Your week and your tools", sub:"Where your time goes, so the team can take it", qs:[
+  {id:"timesinks", t:"area", l:"What eats up your week that you wish someone else would handle?"},
+  {id:"tools", t:"chips", l:"Which tools does your office use?", o:["Encompass","Arive","LendingPad","Calyx","Floify","Salesforce","HubSpot","Jungo","Total Expert","Bonzo","Mailchimp","Google Workspace","Microsoft 365","Canva","Meta Business Suite"]},
+  {id:"tools_other", t:"text", l:"Any other software we should know about?"},
+  {id:"marketing_now", t:"area", l:"Who handles your marketing and social media today, and how often do you post?"},
+  {id:"channels", t:"chips", l:"Which channels should the team run?", o:["Facebook","Instagram","YouTube","TikTok","LinkedIn","Google Business Profile","Email newsletter","Text messages","Blog and learning center"]}
+ ]},
+ {id:"hire", title:"Hire your agent team", sub:"Pick the staff you want, or write your own", hire:true, qs:[]},
+ {id:"work", title:"How your team works with you", sub:"Approvals, reports and who they answer to", qs:[
+  {id:"approve", t:"radio", l:"What needs your yes before it goes out?", o:["Everything public: posts, emails, replies","Anything new; repeat formats can run","Only big things like campaigns and ad spend"]},
+  {id:"approver", t:"text", l:"Who else on your team can approve things when you're busy?"},
+  {id:"contact", t:"chips", l:"How should your team reach you?", o:["Your own agent web page (desktop and phone)","Text message","Email","A quick daily call"]},
+  {id:"report", t:"radio", l:"When do you want a daily report?", o:["First thing in the morning","Midday","End of day","Weekly is enough"]},
+  {id:"users", t:"area", l:"Who besides you will talk to the agents?", h:"Each person can have their own way in."}
+ ]},
+ {id:"look", title:"Your office", sub:"The place your agents work", qs:[
+  {id:"office_note", t:"info", l:"Your team lives in its own office. You'll have two views of it: a full office world where you watch your staff work, and a clean, simple card view for quick requests. They're the same team either way."},
+  {id:"office_style", t:"radio", l:"What should their office look like?", o:["Your real office in Vestavia Hills (send us photos)","A classic Southern home office","A modern downtown Birmingham office","A cozy hometown storefront","Surprise me"]},
+  {id:"office_more", t:"area", l:"Anything you'd love to see in it?", h:"Family photos, a front porch, Auburn or Alabama colors, a golf bag in the corner."},
+  {id:"view", t:"radio", l:"Which view will you use most?", o:["The full office world","The simple card view","Both"]}
+ ]},
+ {id:"goals", title:"Goals and rules", sub:"What winning looks like and what we must never do", qs:[
+  {id:"goal90", t:"area", l:"What should be different 90 days from now?", h:"More applications, more realtor partners, more reviews, more of your time back."},
+  {id:"volume", t:"text", l:"About how many loans do you close a month now, and what would you like that to be?"},
+  {id:"budget", t:"radio", l:"Is there a monthly budget for paid ads?", o:["No paid ads for now","Under $500","$500 to $2,000","Over $2,000","Let's talk about it"]},
+  {id:"compliance", t:"area", l:"Who reviews your advertising for compliance, and what must every ad include?", h:"For example your NMLS number, Equal Housing Opportunity and state license numbers. We follow this on everything."},
+  {id:"offlimits", t:"area", l:"Anything the team should never say, promise or post?"},
+  {id:"anything", t:"area", l:"Anything else we should know?"}
+ ]}
+];
+
+/* the staff list: employees, each with a full job */
+const DEPTS = [
+ {name:"Leadership", roles:[
+  {id:"chief", t:"Chief of Staff", d:"Your right hand. Takes every request from you, hands work to the right person, follows up and sends you one daily report.", rec:1},
+  {id:"pm", t:"Project Manager", d:"Keeps the task board. Tracks deadlines and who owns what, and nudges anyone who's behind."}
+ ]},
+ {name:"Marketing", roles:[
+  {id:"cmo", t:"Marketing Director", d:"Owns the plan for what goes out each week and where it runs. Reviews everything before it reaches you.", rec:1},
+  {id:"social", t:"Social Media Manager", d:"Writes and schedules posts, answers comments in your voice and grows your following.", rec:1},
+  {id:"copy", t:"Copywriter", d:"Writes posts, emails, ads, web pages and video scripts that sound like Weber Mortgage."},
+  {id:"art", t:"Art Director and Video Producer", d:"Makes the images, short videos and ads, all on brand."},
+  {id:"reviews", t:"Reviews and Reputation Manager", d:"Asks happy clients for Google reviews after closing and drafts thoughtful replies to every review.", rec:1},
+  {id:"local", t:"Local Search Manager", d:"Keeps your Google Business Profile and listings fresh so local buyers find you first."},
+  {id:"email", t:"Email and Newsletter Manager", d:"Sends a monthly market update and stays in touch with past clients by email."},
+  {id:"teacher", t:"Learning Center Writer", d:"Writes plain English guides on buying, refinancing and VA loans for your site and social."},
+  {id:"numbers", t:"Marketing Analyst", d:"Tracks what's working, from leads to applications, and tells you in plain words what to do more of."}
+ ]},
+ {name:"Clients and partners", roles:[
+  {id:"frontdesk", t:"Front Desk and Lead Intake", d:"Answers new web and social inquiries fast, gathers the basics and books a call with a loan officer. Never quotes rates.", rec:1},
+  {id:"nurture", t:"Follow-Up Coordinator", d:"Keeps warm leads warm with friendly check-ins until they're ready to apply."},
+  {id:"pastclient", t:"Past Client Care", d:"Remembers home anniversaries and birthdays and lets past clients know when a refinance might help them."},
+  {id:"realtor", t:"Realtor and Builder Relations", d:"Builds referral partnerships with co-branded content, open house support and regular check-ins."},
+  {id:"status", t:"Loan Status Writer", d:"Drafts clear, friendly status updates for your team to send borrowers and agents at each step."}
+ ]},
+ {name:"Back office", roles:[
+  {id:"compliance", t:"Compliance Reviewer", d:"Checks every ad and post for your NMLS number, Equal Housing Opportunity and lending ad rules before it reaches you.", rec:1},
+  {id:"cfo", t:"Finance Manager", d:"Watches marketing spend against results and keeps a simple monthly budget."},
+  {id:"recruit", t:"Recruiting Coordinator", d:"Writes job posts and screens interest when you're hiring loan officers or staff."}
+ ]}
+];
+const ROLES = DEPTS.flatMap(d=>d.roles);
+
+/* ---------- state ---------- */
+const ALL = SECTIONS.flatMap(s=>s.qs).filter(q=>q.t!=="info");
+let answers = {}, hires = [], custom = [], status = "draft", openId = "biz";
+let docRef = null, saveTimer = null, saving = false, pending = false, downloads = null;
+const $ = id => document.getElementById(id);
+const esc = s => String(s==null?"":s).replace(/[&<>"]/g, c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const uid = () => "c" + Date.now().toString(36) + Math.random().toString(36).slice(2,6);
+
+/* ---------- render ---------- */
+function qHTML(q){
+  const help = q.h ? `<div class="help">${esc(q.h)}</div>` : "";
+  const pre = q.pre ? `<div class="pre">${esc(q.pre)}</div>` : "";
+  if(q.t==="info") return `<div class="q"><div class="pre" style="font-size:14.5px">${esc(q.l)}</div></div>`;
+  if(q.t==="text") return `<div class="q"><label class="l" for="q_${q.id}">${esc(q.l)}</label>${help}<input type="text" id="q_${q.id}" data-q="${q.id}"></div>`;
+  if(q.t==="area") return `<div class="q"><label class="l" for="q_${q.id}">${esc(q.l)}</label>${help}<textarea id="q_${q.id}" data-q="${q.id}"></textarea></div>`;
+  if(q.t==="scale") return `<div class="q"><label class="l" for="q_${q.id}">${esc(q.l)} <span class="val" id="v_${q.id}"></span></label><div class="scale"><input type="range" min="0" max="10" step="1" id="q_${q.id}" data-q="${q.id}"><div class="ends"><span>${esc(q.ends[0])}</span><span>${esc(q.ends[1])}</span></div></div></div>`;
+  const type = q.t==="chips" ? "checkbox" : "radio";
+  return `<fieldset class="q"><legend class="l">${esc(q.l)}</legend>${pre}${help}<div class="chips">` +
+    q.o.map((o,i)=>`<label class="chip"><input type="${type}" name="q_${q.id}" id="q_${q.id}_${i}" value="${esc(o)}" data-q="${q.id}"><span>${esc(o)}</span></label>`).join("") + `</div></fieldset>`;
+}
+function hireHTML(){
+  return `<div class="hire-note"><b>Picture every agent as an employee you're hiring.</b>
+    <p>These aren't one-trick apps. Each agent is a full staff member with a job title and real responsibilities, and they work together as a team the way a good office does. That's what makes this system work.</p>
+    <p>So choose them the way you'd staff Weber Mortgage if money were no object. Read each card as a job description. If you have a job in mind that isn't here, press <b>Add a custom agent</b> and write it up like a job posting. The ones marked <em style="font-style:normal;color:var(--gold);font-weight:600">Recommended</em> are where most offices start.</p></div>
+    ${DEPTS.map(d=>`<div class="dept"><h4>${esc(d.name)}</h4><div class="roles">${d.roles.map(r=>`<button type="button" class="role" data-role="${r.id}" aria-pressed="false"><span class="tick">✓</span>${r.rec?'<em>Recommended</em>':''}<b>${esc(r.t)}</b><span>${esc(r.d)}</span></button>`).join("")}</div></div>`).join("")}
+    <div class="dept"><h4>Your custom hires</h4><div class="roles" id="customList"></div></div>
+    <div class="hired" id="hired"></div>
+    <div class="q"><label class="l" for="q_hire_notes">Anything about the team as a whole?</label><div class="help">Who reports to whom, which hires matter most, or a role you're unsure about.</div><textarea id="q_hire_notes" data-q="hire_notes"></textarea></div>`;
+}
+function render(){
+  $("form").innerHTML = SECTIONS.map((s,i)=>`<section class="block" id="b_${s.id}">
+    <button type="button" class="head" data-open="${s.id}" aria-expanded="false" aria-controls="body_${s.id}"><span class="num">${i+1}</span><span class="ht"><h3>${esc(s.title)}</h3><small>${esc(s.sub)}</small></span><span class="tally" id="t_${s.id}"></span><span class="chev" aria-hidden="true"></span></button>
+    <div class="body" id="body_${s.id}">${s.hire ? hireHTML() : s.qs.map(qHTML).join("")}</div></section>`).join("");
+}
+function renderCustom(){
+  const el = $("customList"); if(!el) return;
+  el.innerHTML = custom.map(c=>`<div class="role on custom"><span class="tick">✓</span><b>${esc(c.title)}</b>${c.name?`<span style="color:var(--ink)">${esc(c.name)}</span>`:""}<span>${esc(c.what)}</span><span style="display:flex;gap:14px"><button type="button" class="x" data-edit="${c.id}">Edit</button><button type="button" class="x" data-del="${c.id}">Remove</button></span></div>`).join("") +
+    `<button type="button" class="addbtn" id="addAgent">+ Add a custom agent</button>`;
+}
+function setOpen(id){
+  openId = (openId===id) ? null : id;
+  SECTIONS.forEach(s=>{ const b=$("b_"+s.id), on = s.id===openId; b.classList.toggle("open",on); b.querySelector(".head").setAttribute("aria-expanded",on); });
+  if(openId){ const b=$("b_"+openId); requestAnimationFrame(()=>b.scrollIntoView({block:"start",behavior:"smooth"})); }
+}
+
+/* ---------- read and fill ---------- */
+function fill(){
+  ALL.forEach(q=>{
+    const v = answers[q.id];
+    if(q.t==="text"||q.t==="area"){ $("q_"+q.id).value = v||""; }
+    else if(q.t==="scale"){ $("q_"+q.id).value = v ?? 5; $("v_"+q.id).textContent = v==null ? "" : v+" / 10"; }
+    else q.o.forEach((o,i)=>{ $(`q_${q.id}_${i}`).checked = q.t==="chips" ? Array.isArray(v)&&v.includes(o) : v===o; });
+  });
+  $("q_hire_notes").value = answers.hire_notes || "";
+  document.querySelectorAll("[data-role]").forEach(b=>{ const on = hires.includes(b.dataset.role); b.classList.toggle("on",on); b.setAttribute("aria-pressed",on); });
+  renderCustom(); progress(); sendState();
+}
+function read(q){
+  if(q.t==="text"||q.t==="area") return $("q_"+q.id).value.trim();
+  if(q.t==="scale") return Number($("q_"+q.id).value);
+  const picked = q.o.filter((o,i)=>$(`q_${q.id}_${i}`).checked);
+  return q.t==="chips" ? picked : (picked[0]||"");
+}
+const has = v => Array.isArray(v) ? v.length>0 : (v!==undefined && v!=="");
+function progress(){
+  let n = 0, total = ALL.length + 1;
+  SECTIONS.forEach(s=>{
+    if(s.hire){ const k = hires.length + custom.length; $("t_"+s.id).textContent = k ? `${k} hired` : ""; $("b_"+s.id).classList.toggle("done", k>0); if(k) n++; return; }
+    const qs = s.qs.filter(q=>q.t!=="info"), a = qs.filter(q=>has(answers[q.id])).length; n += a;
+    $("t_"+s.id).textContent = `${a} of ${qs.length}`; $("b_"+s.id).classList.toggle("done", a===qs.length);
+  });
+  $("count").textContent = `${n} of ${total} answered`;
+  $("meter").style.width = (n/total*100)+"%";
+  const names = ROLES.filter(r=>hires.includes(r.id)).map(r=>r.t).concat(custom.map(c=>c.title + " (custom)"));
+  const h = $("hired"); if(h) h.innerHTML = names.length ? `<b>Your team so far (${names.length}):</b> ${esc(names.join(", "))}` : "No one hired yet. Tap a card to add that person to your team.";
+}
+function sendState(){
+  if(status==="sent"){ $("send").textContent = "Sent ✓"; $("footText").textContent = "Mike has your answers. Change anything you like and it keeps saving."; }
+  else $("send").textContent = "Send to Mike";
+}
+function setSave(t, ok){ const s=$("save"); s.textContent=t; s.classList.toggle("ok",!!ok); }
+
+/* ---------- saving ---------- */
+function snapshot(){
+  return {answers, hires, custom, status, updatedAt:new Date().toISOString(),
+    team: ROLES.filter(r=>hires.includes(r.id)).map(r=>({id:r.id,title:r.t,job:r.d})).concat(custom.map(c=>({id:c.id,title:c.title,name:c.name,job:c.what,success:c.good,custom:true}))),
+    questions: SECTIONS.flatMap(sec=>sec.qs.filter(q=>q.t!=="info").map(q=>({id:q.id,label:q.l,section:sec.title}))).concat([{id:"hire_notes",label:"Notes on the team as a whole",section:"Hire your agent team"}])};
+}
+function local(){ try{ localStorage.setItem("weber_intake", JSON.stringify(snapshot())); return true; }catch(e){ return false; } }
+function queue(){ setSave("Editing"); clearTimeout(saveTimer); saveTimer = setTimeout(save, 700); }
+async function save(){
+  const okLocal = local();
+  if(!docRef){ setSave(okLocal ? "Saved on this device" : "Not saved", okLocal); return; }
+  if(saving){ pending = true; return; }
+  saving = true; setSave("Saving");
+  try{ await docRef.set(snapshot()); setSave("Saved", true); }
+  catch(e){ setSave(okLocal ? "Saved on this device" : "Not saved", okLocal); if(e && e.code==="unavailable") setTimeout(save, 2000); }
+  saving = false; if(pending){ pending = false; save(); }
+}
+
+/* ---------- plain text copy ---------- */
+function asText(){
+  const L = ["WEBER MORTGAGE · AGENT ONBOARDING ANSWERS", "Michael Weber · " + new Date().toLocaleDateString(), ""];
+  SECTIONS.forEach((s,i)=>{
+    L.push(`${i+1}. ${s.title.toUpperCase()}`);
+    if(s.hire){
+      ROLES.filter(r=>hires.includes(r.id)).forEach(r=>L.push("  Hire: " + r.t));
+      custom.forEach(c=>L.push(`  Custom hire: ${c.title}${c.name?" ("+c.name+")":""}\n    Does: ${c.what}\n    Great job looks like: ${c.good||"not said"}`));
+      if(answers.hire_notes) L.push("  Team notes: " + answers.hire_notes);
+    } else s.qs.filter(q=>q.t!=="info").forEach(q=>{ const v=answers[q.id]; if(has(v)) L.push(`  ${q.l}\n    ${Array.isArray(v)?v.join(", "):q.t==="scale"?v+" / 10":v}`); });
+    L.push("");
+  });
+  return L.join("\n");
+}
+
+/* ---------- custom agent modal ---------- */
+let editing = null;
+function openModal(c){
+  editing = c ? c.id : null;
+  $("mTitle").textContent = c ? "Edit custom agent" : "Add a custom agent";
+  $("mJob").value = c ? c.title : ""; $("mName").value = c ? (c.name||"") : ""; $("mWhat").value = c ? c.what : ""; $("mGood").value = c ? (c.good||"") : "";
+  $("mErr").textContent = ""; $("scrim").hidden = false; setTimeout(()=>$("mJob").focus(), 30);
+}
+function closeModal(){ $("scrim").hidden = true; const a=$("addAgent"); if(a) a.focus(); }
+$("mCancel").onclick = closeModal;
+$("scrim").addEventListener("click", e=>{ if(e.target===$("scrim")) closeModal(); });
+document.addEventListener("keydown", e=>{ if(e.key==="Escape" && !$("scrim").hidden) closeModal(); });
+$("mSave").onclick = ()=>{
+  const title = $("mJob").value.trim(), what = $("mWhat").value.trim();
+  if(!title || !what){ $("mErr").textContent = "Give the job a title and say what they do."; return; }
+  const rec = {id: editing || uid(), title, name:$("mName").value.trim(), what, good:$("mGood").value.trim()};
+  const i = custom.findIndex(c=>c.id===rec.id); if(i<0) custom.push(rec); else custom[i] = rec;
+  closeModal(); renderCustom(); progress(); queue();
+};
+
+/* ---------- events ---------- */
+function onInput(e){
+  const id = e.target.dataset.q; if(!id) return;
+  if(id==="hire_notes"){ answers.hire_notes = e.target.value.trim(); }
+  else { const q = ALL.find(x=>x.id===id); answers[id] = read(q); if(q.t==="scale") $("v_"+id).textContent = answers[id]+" / 10"; }
+  progress(); queue();
+}
+render(); fill(); setOpen("biz");
+$("form").addEventListener("input", onInput);
+$("form").addEventListener("change", onInput);
+$("form").addEventListener("submit", e=>e.preventDefault());
+$("form").addEventListener("click", e=>{
+  const h = e.target.closest("[data-open]"); if(h){ setOpen(h.dataset.open); return; }
+  const r = e.target.closest("[data-role]");
+  if(r){ const id=r.dataset.role; hires = hires.includes(id) ? hires.filter(x=>x!==id) : hires.concat(id); r.classList.toggle("on"); r.setAttribute("aria-pressed", hires.includes(id)); progress(); queue(); return; }
+  if(e.target.closest("#addAgent")){ openModal(null); return; }
+  const ed = e.target.closest("[data-edit]"); if(ed){ openModal(custom.find(c=>c.id===ed.dataset.edit)); return; }
+  const del = e.target.closest("[data-del]");
+  if(del){ if(del.dataset.sure!=="1"){ del.dataset.sure="1"; del.textContent="Tap again to remove"; return; } custom = custom.filter(c=>c.id!==del.dataset.del); renderCustom(); progress(); queue(); }
+});
+$("send").onclick = ()=>{ status = "sent"; sendState(); clearTimeout(saveTimer); save(); if(!docRef) $("note").textContent = "This page couldn't reach Mike from here, so your answers are only saved on this device. Press Copy my answers and send them to Mike by email or text."; };
+$("copy").onclick = async ()=>{
+  const text = asText();
+  try{ await navigator.clipboard.writeText(text); $("copy").textContent = "Copied ✓"; setTimeout(()=>$("copy").textContent="Copy my answers", 2500); return; }catch(e){}
+    const ta = document.createElement("textarea"); ta.value = text; ta.style.minHeight = "240px"; $("note").replaceChildren(document.createTextNode("Select this text and copy it:"), ta); ta.select();
+};
+
+/* ---------- load ---------- */
+const CFG = window.WEBER_CONFIG || {};
+try{ const d = JSON.parse(localStorage.getItem("weber_intake")||"null"); if(d){ answers=d.answers||{}; hires=d.hires||[]; custom=d.custom||[]; status=d.status||"draft"; fill(); } }catch(e){}
+setSave("Saved on this device", true);
+if(CFG.apiUrl){
+  docRef = {
+    set: async (data)=>{ const r = await fetch(CFG.apiUrl, {method:"POST", headers:{"Content-Type":"text/plain;charset=utf-8"}, body:JSON.stringify({key:CFG.key, data})}); const j = await r.json(); if(!j.ok) throw new Error(j.error||"save failed"); return j; }
+  };
+  (async()=>{
+    try{
+      const j = await fetch(CFG.apiUrl + "?key=" + encodeURIComponent(CFG.key) + "&action=load").then(r=>r.json());
+      let localAt = ""; try{ localAt = (JSON.parse(localStorage.getItem("weber_intake")||"{}")||{}).updatedAt || ""; }catch(e){}
+      if(j.ok && j.data && (j.data.updatedAt||"") > localAt){
+        const d = j.data; answers = {...(d.answers||{})}; hires = d.hires||[]; custom = d.custom||[]; status = d.status||"draft"; fill();
+      }
+      setSave("Saved", true);
+    }catch(e){ setSave("Saved on this device", true); }
+  })();
+} else {
+  $("note").textContent = "Your answers save on this device. When you're finished, press Copy my answers and send them to Mike.";
+}
+</script>
+
+</body></html>
